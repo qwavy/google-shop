@@ -8,10 +8,8 @@
 
 body{
     max-width: 1280px;
-
     margin: auto;
     font-family: 'Roboto', Arial, Helvetica, sans-serif;
-
 }
 .button{
     font-family: 'Roboto', Arial, Helvetica, sans-serif;
@@ -83,7 +81,6 @@ body{
 }
 
 .hero__inner{
-
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -128,7 +125,6 @@ body{
 
 .products__title{
     margin: 100px 0;
-
     text-align: center;
     color: #3C4043;
     font-size: 16px;
@@ -145,10 +141,7 @@ body{
     height: 300px;
     width: 100%;
     max-width: 250px;
-    /* transition: 0.2s ease-in;
-     */
     transition: 5s all;
-
 }
 
 .products__category{
@@ -286,7 +279,6 @@ body{
 
 .category__image{
     transition: 0.5s all;
-
 }
 
 .category__item:hover  .category__image{
@@ -317,7 +309,6 @@ body{
     display: flex;
     flex-direction: column;
     justify-content: space-evenly;
-
     align-items: center;
     border-radius: 30px;
     min-height: 700px;
@@ -349,21 +340,16 @@ body{
 }
 
 .sustainability__info{
-    
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
 }
 
-.sustainability__info:nth-child(1n){
-    padding: 20px;
-    color: #1967D2;
-}
 
 
 .sustainability__description{
-
+    padding: 20px;
     max-width: 400px;
 }
 
