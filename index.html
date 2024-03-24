@@ -1,244 +1,454 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
-    <link rel="stylesheet" href="style.css">
-</head>
-<body>
+    <link
+  rel="stylesheet"
+  href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
+/>
+    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="adaptive.css" />
+  </head>
+  <body>
     <header class="header">
-        <div class="header__navbar">
-            
-            <ul class="header__list">
-                <img class="header__logo" src="./images/logo.svg" alt="logo"/>
-                <li class="header__item">
-                    <a class="header__link" href="#">Phones</a>
-                </li>
-                <li class="header__item">
-                    <a class="header__link" href="#">Earbuds</a>
-                </li>
-                <li class="header__item">
-                    <a class="header__link" href="#">Watches</a>
-                </li>
-                <li class="header__item">
-                    <a class="header__link" href="#">Smart Home</a>
-                </li>
-                <li class="header__item">
-                    <a class="header__link" href="#">Laptops</a>
-                </li>
-                <li class="header__item">
-                    <a class="header__link" href="#">Accessories</a>
-                </li>
-                <li class="header__item">
-                    <a class="header__link" href="#">Subscriptions</a>
-                </li>
-                <li class="header__item">
-                    <a class="header__link" href="#">Offers</a>
-                </li>
+      <div class="header__navbar">
+        <div class="burger-menu">
+            <div class="burger-menu-lines">
+
+                <span class="line line1"></span>
+                <span class="line line2"></span>
+                <span class="line line3"></span>
+            </div>
+          <div class="burger-menu__content burger-menu-hidden">
+            <ul class="burger-menu__list">
+              <li class="burger-menu__item">
+                <a class="burger-menu__link" href="#">Phones</a>
+              </li>
+              <li class="burger-menu__item">
+                <a class="burger-menu__link" href="#">Earbuds</a>
+              </li>
+              <li class="burger-menu__item">
+                <a class="burger-menu__link" href="#">Watches</a>
+              </li>
+              <li class="burger-menu__item">
+                <a class="burger-menu__link" href="#">Smart Home</a>
+              </li>
+              <li class="burger-menu__item">
+                <a class="burger-menu__link" href="#">Laptops</a>
+              </li>
+              <li class="burger-menu__item">
+                <a class="burger-menu__link" href="#">Accessories</a>
+              </li>
+              <li class="burger-menu__item">
+                <a class="burger-menu__link" href="#">Subscriptions</a>
+              </li>
+              <li class="burger-menu__item">
+                <a class="burger-menu__link" href="#">Offers</a>
+              </li>
             </ul>
+          </div>
         </div>
-        <div class="header-action">
-            <div class="header-action__inner">
-                <img class="header-action__image" src="./images/icons/search-bar.svg" alt="search bar icon"/>
-                <img class="header-action__image" src="./images/icons/faq.svg" alt="faq icon"/>
-                <img class="header-action__image" src="./images/icons/cart.svg" alt="cart icon"/>
-                <img class="header-action__image" src="./images/icons/account.svg" alt="account icon"/>
-            </div> 
+        <ul class="header__list">
+          <img class="header__logo" src="./images/logo.svg" alt="logo" />
+          <li class="header__item">
+            <a class="header__link" href="#">Phones</a>
+          </li>
+          <li class="header__item">
+            <a class="header__link" href="#">Earbuds</a>
+          </li>
+          <li class="header__item">
+            <a class="header__link" href="#">Watches</a>
+          </li>
+          <li class="header__item">
+            <a class="header__link" href="#">Smart Home</a>
+          </li>
+          <li class="header__item">
+            <a class="header__link" href="#">Laptops</a>
+          </li>
+          <li class="header__item">
+            <a class="header__link" href="#">Accessories</a>
+          </li>
+          <li class="header__item">
+            <a class="header__link" href="#">Subscriptions</a>
+          </li>
+          <li class="header__item">
+            <a class="header__link" href="#">Offers</a>
+          </li>
+        </ul>
+      </div>
+      <div class="header-action">
+        <div class="header-action__inner">
+          <svg class="header-action__image" width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M12.5 11H11.7L11.4 10.7C12.4 9.6 13 8.1 13 6.5C13 2.9 10.1 0 6.5 0C2.9 0 0 2.9 0 6.5C0 10.1 2.9 13 6.5 13C8.1 13 9.6 12.4 10.7 11.4L11 11.7V12.5L16 17.5L17.5 16L12.5 11ZM6.5 11C4 11 2 9 2 6.5C2 4 4 2 6.5 2C9 2 11 4 11 6.5C11 9 9 11 6.5 11Z" fill="black"/>
+            </svg>
+            
+          <svg class="header-action__image" width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M10 0C4.48 0 0 4.48 0 10C0 15.52 4.48 20 10 20C15.52 20 20 15.52 20 10C20 4.48 15.52 0 10 0ZM11 17H9V15H11V17ZM13.07 9.25L12.17 10.17C11.45 10.9 11 11.5 11 13H9V12.5C9 11.4 9.45 10.4 10.17 9.67L11.41 8.41C11.78 8.05 12 7.55 12 7C12 5.9 11.1 5 10 5C8.9 5 8 5.9 8 7H6C6 4.79 7.79 3 10 3C12.21 3 14 4.79 14 7C14 7.88 13.64 8.68 13.07 9.25Z" fill="black"/>
+            </svg>
+            
+          <svg class="header-action__image" width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M6 16C4.9 16 4 16.9 4 18C4 19.1 4.9 20 6 20C7.1 20 8 19.1 8 18C8 16.9 7.1 16 6 16ZM0 2H2L5.6 9.6L4.2 12C4.1 12.3 4 12.7 4 13C4 14.1 4.9 15 6 15H18V13H6.4C6.3 13 6.2 12.9 6.2 12.8V12.7L7.1 11H14.5C15.3 11 15.9 10.6 16.2 10L19.8 3.5C20 3.3 20 3.2 20 3C20 2.4 19.6 2 19 2H4.2L3.8 1.1C3.5 0.5 2.8 0 2 0H0V2ZM16 16C14.9 16 14 16.9 14 18C14 19.1 14.9 20 16 20C17.1 20 18 19.1 18 18C18 16.9 17.1 16 16 16Z" fill="black"/>
+            </svg>
+            
+          <svg class="header-action__image" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M12 2C6.48 2 2 6.48 2 12C2 17.52 6.48 22 12 22C17.52 22 22 17.52 22 12C22 6.48 17.52 2 12 2ZM12 5C13.66 5 15 6.34 15 8C15 9.66 13.66 11 12 11C10.34 11 9 9.66 9 8C9 6.34 10.34 5 12 5ZM12 19.2C9.5 19.2 7.29 17.92 6 15.98C6.03 13.99 10 12.9 12 12.9C13.99 12.9 17.97 13.99 18 15.98C16.71 17.92 14.5 19.2 12 19.2Z" fill="black"/>
+            </svg>
+            
         </div>
+      </div>
     </header>
     <main>
-        <section class="hero">
-            <div class="hero__inner">
-                <div class="hero__info">
-                    <h1 class="hero__title">Pixel 8 Pro and Pixel 8.</h1>
-                    <p class="hero__description">The gifts you need, stress-free. Shop the best of Google with ease.</p>
-    
-                    <div class="hero__buttons">
-                        <button class="hero__button button hero__button_border">Browse deals</button>
-                        <button class="hero__button button">Browse the gift guide</button>
-                    </div>
-                </div>
+      <section class="hero">
+        <div class="hero__inner">
+          <div class="hero__info">
+            <h1 class="hero__title">Pixel 8 Pro and Pixel 8.</h1>
+            <p class="hero__description">
+              The gifts you need, stress-free. Shop the best of Google with
+              ease.
+            </p>
 
-                <video autoplay muted class="hero__video">
-                    <source src="https://storage.googleapis.com/mannequin/blobs/befa5ad8-bd35-450e-ae27-2804974e8f1b.mp4">
-                </video>
+            <div class="hero__buttons">
+              <button class="hero__button button hero__button_border">
+                Browse deals
+              </button>
+              <button class="hero__button button">Browse the gift guide</button>
             </div>
-        </section>
-        <section class="products">
-            <h2 class="products__title">Sneak a peek. For you or for them.</h2>
-            <div class="products__container">
-                <div class="products__item">
-                    <span class="products__category">new</span>
-                    <img class="products__image" src="./images/products/product__image-1.png" alt="products image"/>
-                    <h3 class="products__name">Google Pixel Watch</h3>
-                </div>
-                <div class="products__item">
-                    <span class="products__category">new</span>
-                    <img class="products__image" src="./images/products/product__image-2.png" alt="products image"/>
-                    <h3 class="products__name">Nest Wifi Pro</h3>
-                </div>
-                <div class="products__item">
-                    <span class="products__category">new</span>
-                    <img class="products__image" src="./images/products/product__image-3.png" alt="products image"/>
-                    <h3 class="products__name">Nest Doorbells</h3>
-                </div>
-                <div class="products__item">
-                    <span class="products__category">new</span>
-                    <img class="products__image" src="./images/products/product__image-4.png" alt="products image"/>
-                    <h3 class="products__name">Pixel Buds Pro</h3>
-                </div>
-                <div class="products__item">
-                    <span class="products__category">new</span>
-                    <img class="products__image" src="./images/products/product__image-5.png" alt="products image"/>
-                    <h3 class="products__name">Pixel 7</h3>
-                </div>
-                <div class="products__item">
-                    <span class="products__category">new</span>
-                    <img class="products__image" src="./images/products/product__image-6.png" alt="products image"/>
-                    <h3 class="products__name">Pixel 7 Pro</h3>
-                </div>
-            </div>
-        </section>
-        <section class="nba">
-            <img class="nba__image" src="./images/nba__image.png" alt="nba image"/>
-            <div class="nba__info">
-                <h2 class="nba__title">This holiday season, Google Pixel is giving back.</h2>
-                <p class="nba__description">
-                    We're contributing $1 million to the NBA Foundation to help advance HBCU students in their careers across STEM, sports, and media industries.
-                </p>
-                <a class="nba__link">Learn more</a>
-            </div>
-        </section>
-        <section class="advertising">
-            <div class="advertising__container">
-                <article class=" advertising__item ">
-                    <div class="advertising__item-info">
+          </div>
 
-                        <span class="advertising__category">Google Pixel Watch</span>
-                        <h3 class="advertising__name">Help by Google. Health by Fitbit.</h3>
-                        <button class="advertising__button button">Learn more</button>
-                    </div>
-                    <img src="./images/advertising/advertising__image-1.png" class="advertising__image" alt="advertising image"/>
-                </article>
-                <article class=" advertising__item ">
-                    <div class="advertising__item-info">
+          <video autoplay muted class="hero__video">
+            <source
+              src="https://storage.googleapis.com/mannequin/blobs/befa5ad8-bd35-450e-ae27-2804974e8f1b.mp4"
+            />
+          </video>
+        </div>
+      </section>
+      <section class="products">
+        <h2 class="products__title">Sneak a peek. For you or for them.</h2>
+        <div class="swiper products__swiper">
 
-                        <span class="advertising__category">Google Pixel Watch</span>
-                        <h3 class="advertising__name">Help by Google. Health by Fitbit.</h3>
-                        <button class="advertising__button button">Learn more</button>
-                    </div>
-                    <img src="./images/advertising/advertising__image-2.png" class="advertising__image" alt="advertising image"/>
-                </article>
-                <article class=" advertising__item ">
-                    <div class="advertising__item-info">
-
-                        <span class="advertising__category">Google Pixel Watch</span>
-                        <h3 class="advertising__name">Help by Google. Health by Fitbit.</h3>
-                        <button class="advertising__button button">Learn more</button>
-                    </div>
-                    <img src="./images/advertising/advertising__image-3.png" class="advertising__image" alt="advertising image"/>
-                </article>
-                <article class=" advertising__item  advertising__item_big">
-                    <div class="advertising__item-info">
-
-                        <span class="advertising__category">Google Pixel Watch</span>
-                        <h3 class="advertising__name">Help by Google. Health by Fitbit.</h3>
-                        <button class="advertising__button button">Learn more</button>
-                    </div>
-                    <img src="./images/advertising/advertising__image-4.png" class="advertising__image" alt="advertising image"/>
-                </article>
-                <article class=" advertising__item advertising__item_big2">
-                    <div class="advertising__item-info">
-
-                        <span class="advertising__category">Google Pixel Watch</span>
-                        <h3 class="advertising__name">Help by Google. Health by Fitbit.</h3>
-                        <button class="advertising__button button">Learn more</button>
-                    </div>
-                    <img src="./images/advertising/advertising__image-5.png" class="advertising__image" alt="advertising image"/>
-                </article>
+          <div class="products__container swiper-wrapper">
+            <div class="products__item swiper-slide">
+              <span class="products__category">new</span>
+              <img
+                class="products__image"
+                src="./images/products/product__image-1.png"
+                alt="products image"
+              />
+              <h3 class="products__name">Google Pixel Watch</h3>
             </div>
-        </section>
-        <section class="category">
-            <div class="category__inner"></div>
-            <h2 class="category__title">Shop by category.</h2>
-            <div class="category__container">
-                <div class="category__item">
-                    <img class="category__image" src="./images/category/category__image-1.png" alt="category image"/>
-                    <h3 class="category__name">Cameras</h3>
-                </div>
-                <div class="category__item">
-                    <img class="category__image" src="./images/category/category__image-2.png" alt="category image"/>
-                    <h3 class="category__name">Doorbells</h3>
-                </div>
-                <div class="category__item">
-                    <img class="category__image" src="./images/category/category__image-3.png" alt="category image"/>
-                    <h3 class="category__name">Streaming</h3>
-                </div>
-                <div class="category__item">
-                    <img class="category__image" src="./images/category/category__image-4.png" alt="category image"/>
-                    <h3 class="category__name">Packages</h3>
-                </div>
+            <div class="products__item swiper-slide">
+              <span class="products__category">new</span>
+              <img
+                class="products__image"
+                src="./images/products/product__image-2.png"
+                alt="products image"
+              />
+              <h3 class="products__name">Nest Wifi Pro</h3>
             </div>
-        </section>
-        <section class="slogan">
-            <div class="slogan__container">
-                <div class="slogan__item">
-                    <span class="slogan__category">Watches</span>
-                    <h2 class="slogan__title">Keep moving. Keep improving.</h2>
-                    <button class="slogan__button button">Explore watches</button>
-                    <img class="slogan__image" src="./images/slogan/slogan__image-1.png" alt="slogan image" />
-                </div>
+            <div class="products__item swiper-slide">
+              <span class="products__category">new</span>
+              <img
+                class="products__image"
+                src="./images/products/product__image-3.png"
+                alt="products image"
+              />
+              <h3 class="products__name">Nest Doorbells</h3>
+            </div>
+            <div class="products__item swiper-slide">
+              <span class="products__category">new</span>
+              <img
+                class="products__image"
+                src="./images/products/product__image-4.png"
+                alt="products image"
+              />
+              <h3 class="products__name">Pixel Buds Pro</h3>
+            </div>
+            <div class="products__item swiper-slide">
+              <a class="products__link" href="pages/pixel-8/pixel-8.html">
+                <span class="products__category">new</span>
+                <img
+                  class="products__image"
+                  src="./images/products/product__image-5.png"
+                  alt="products image"
+                />
+                <h3 class="products__name">Pixel 8</h3>
+              </a>
+            </div>
+            <div class="products__item swiper-slide">
+              <span class="products__category">new</span>
+              <img
+                class="products__image"
+                src="./images/products/product__image-6.png"
+                alt="products image"
+              />
+              <h3 class="products__name">Pixel 7 Pro</h3>
+            </div>
+            <div class="products__item swiper-slide">
+              <span class="products__category">new</span>
+              <img
+                class="products__image"
+                src="./images/products/product__image-6.png"
+                alt="products image"
+              />
+              <h3 class="products__name">Pixel 7 Pro</h3>
+            </div>
+            <div class="products__item swiper-slide">
+              <span class="products__category">new</span>
+              <img
+                class="products__image"
+                src="./images/products/product__image-6.png"
+                alt="products image"
+              />
+              <h3 class="products__name">Pixel 7 Pro</h3>
+            </div>
+            <div class="products__item swiper-slide">
+              <span class="products__category">new</span>
+              <img
+                class="products__image"
+                src="./images/products/product__image-6.png"
+                alt="products image"
+              />
+              <h3 class="products__name">Pixel 7 Pro</h3>
+            </div>
+            <div class="products__item swiper-slide">
+              <span class="products__category">new</span>
+              <img
+                class="products__image"
+                src="./images/products/product__image-6.png"
+                alt="products image"
+              />
+              <h3 class="products__name">Pixel 7 Pro</h3>
+            </div>
 
-                <div class="slogan__item">
-                    <span class="slogan__category">Earbuds</span>
-                    <h2 class="slogan__title">Great sound. All around.</h2>
-                    <button class="slogan__button button">Explore earbuds</button>
-                    <img class="slogan__image" src="./images/slogan/slogan__image-2.png" alt="slogan image" />
-                </div>
-            </div>
-        </section>
-        <section class="sustainability">
-            <div class="sustainability__inner">
-                <img class="sustainability__image"  src="./images/sustainability/sustainability__image-1.png" alt="sustainability image" />
-                <div class="sustainability__info">
-                    <h2 class="sustainability__title">Putting sustainability to work.</h2>
-                    <p class="sustainability__description">We’re committed to using recycled or renewable material in all Pixel, Nest, and Fitbit products by 2025.</p>
-                    <button class="sustainability__button button">Learn more</button>
-                </div>
-            </div>
-        </section>
+          </div>
 
-        <footer class="footer">
-            <div class="footer__inner">
-                <div class="footer__socails">
-                    <ul class="footer__list">
-                        <li class="footer__item" >
-                            <img class="footer__item-image" src="./images/socials/twitter.svg" alt="social icon"/>
-                        </li>
-                        <li class="footer__item" >
-                            <img class="footer__item-image" src="./images/socials/instagramm.svg" alt="social icon"/>
-                        </li>
-                        <li class="footer__item" >
-                            <img class="footer__item-image" src="./images/socials/facebook.svg" alt="social icon"/>
-                        </li>
-                        <li class="footer__item" >
-                            <img class="footer__item-image" src="./images/socials/youtube.svg" alt="social icon"/>
-                        </li>
-                        <li class="footer__item" >
-                            <img class="footer__item-image" src="./images/socials/tiktok.svg" alt="social icon"/>
-                        </li>
-                    </ul>
-                </div>
-                <div class="footer__copyright">
-                    <span>Privacy</span>
-                    <span>Google Nest Commitment to Privacy</span>
-                    <span>Sales Terms</span>
-                    <span>Terms of Service</span>
-                    <span>Careers</span>
-                </div>
+        </div>
+      </section>
+      <section class="nba">
+        <img class="nba__image" src="./images/nba__image.png" alt="nba image" />
+        <div class="nba__info">
+          <h2 class="nba__title">
+            This holiday season, Google Pixel is giving back.
+          </h2>
+          <p class="nba__description">
+            We're contributing $1 million to the NBA Foundation to help advance
+            HBCU students in their careers across STEM, sports, and media
+            industries.
+          </p>
+          <a class="nba__link">Learn more</a>
+        </div>
+      </section>
+      <section class="advertising">
+        <div class="advertising__container">
+          <article class="advertising__item">
+            <div class="advertising__item-info">
+              <span class="advertising__category">Google Pixel Watch</span>
+              <h3 class="advertising__name">
+                Help by Google. Health by Fitbit.
+              </h3>
+              <button class="advertising__button button">Learn more</button>
             </div>
-        </footer>
+            <img
+              src="./images/advertising/advertising__image-1.png"
+              class="advertising__image"
+              alt="advertising image"
+            />
+          </article>
+          <article class="advertising__item">
+            <div class="advertising__item-info">
+              <span class="advertising__category">Google Pixel Watch</span>
+              <h3 class="advertising__name">
+                Help by Google. Health by Fitbit.
+              </h3>
+              <button class="advertising__button button">Learn more</button>
+            </div>
+            <img
+              src="./images/advertising/advertising__image-2.png"
+              class="advertising__image"
+              alt="advertising image"
+            />
+          </article>
+          <article class="advertising__item">
+            <div class="advertising__item-info">
+              <span class="advertising__category">Google Pixel Watch</span>
+              <h3 class="advertising__name">
+                Help by Google. Health by Fitbit.
+              </h3>
+              <button class="advertising__button button">Learn more</button>
+            </div>
+            <img
+              src="./images/advertising/advertising__image-3.png"
+              class="advertising__image"
+              alt="advertising image"
+            />
+          </article>
+          <article class="advertising__item advertising__item_big">
+            <div class="advertising__item-info">
+              <span class="advertising__category">Google Pixel Watch</span>
+              <h3 class="advertising__name">
+                Help by Google. Health by Fitbit.
+              </h3>
+              <button class="advertising__button button">Learn more</button>
+            </div>
+            <img
+              src="./images/advertising/advertising__image-4.png"
+              class="advertising__image"
+              alt="advertising image"
+            />
+          </article>
+          <article class="advertising__item advertising__item_big2">
+            <div class="advertising__item-info">
+              <span class="advertising__category">Google Pixel Watch</span>
+              <h3 class="advertising__name">
+                Help by Google. Health by Fitbit.
+              </h3>
+              <button class="advertising__button button">Learn more</button>
+            </div>
+            <img
+              src="./images/advertising/advertising__image-5.png"
+              class="advertising__image"
+              alt="advertising image"
+            />
+          </article>
+        </div>
+      </section>
+      <section class="category">
+        <div class="category__inner"></div>
+        <h2 class="category__title">Shop by category.</h2>
+        <div class="category__container">
+          <div class="category__item">
+            <img
+              class="category__image"
+              src="./images/category/category__image-1.png"
+              alt="category image"
+            />
+            <h3 class="category__name">Cameras</h3>
+          </div>
+          <div class="category__item">
+            <img
+              class="category__image"
+              src="./images/category/category__image-2.png"
+              alt="category image"
+            />
+            <h3 class="category__name">Doorbells</h3>
+          </div>
+          <div class="category__item">
+            <img
+              class="category__image"
+              src="./images/category/category__image-3.png"
+              alt="category image"
+            />
+            <h3 class="category__name">Streaming</h3>
+          </div>
+          <div class="category__item">
+            <img
+              class="category__image"
+              src="./images/category/category__image-4.png"
+              alt="category image"
+            />
+            <h3 class="category__name">Packages</h3>
+          </div>
+        </div>
+      </section>
+      <section class="slogan">
+        <div class="slogan__container">
+          <div class="slogan__item">
+            <span class="slogan__category">Watches</span>
+            <h2 class="slogan__title">Keep moving. Keep improving.</h2>
+            <button class="slogan__button button">Explore watches</button>
+            <img
+              class="slogan__image"
+              src="./images/slogan/slogan__image-1.png"
+              alt="slogan image"
+            />
+          </div>
+
+          <div class="slogan__item">
+            <span class="slogan__category">Earbuds</span>
+            <h2 class="slogan__title">Great sound. All around.</h2>
+            <button class="slogan__button button">Explore earbuds</button>
+            <img
+              class="slogan__image"
+              src="./images/slogan/slogan__image-2.png"
+              alt="slogan image"
+            />
+          </div>
+        </div>
+      </section>
+      <section class="sustainability">
+        <div class="sustainability__inner">
+          <img
+            class="sustainability__image"
+            src="./images/sustainability/sustainability__image-1.png"
+            alt="sustainability image"
+          />
+          <div class="sustainability__info">
+            <h2 class="sustainability__title">
+              Putting sustainability to work.
+            </h2>
+            <p class="sustainability__description">
+              We’re committed to using recycled or renewable material in all
+              Pixel, Nest, and Fitbit products by 2025.
+            </p>
+            <button class="sustainability__button button">Learn more</button>
+          </div>
+        </div>
+      </section>
+
+      <footer class="footer">
+        <div class="footer__inner">
+          <div class="footer__socails">
+            <ul class="footer__list">
+              <li class="footer__item">
+                <img
+                  class="footer__item-image"
+                  src="./images/socials/twitter.svg"
+                  alt="social icon"
+                />
+              </li>
+              <li class="footer__item">
+                <img
+                  class="footer__item-image"
+                  src="./images/socials/instagramm.svg"
+                  alt="social icon"
+                />
+              </li>
+              <li class="footer__item">
+                <img
+                  class="footer__item-image"
+                  src="./images/socials/facebook.svg"
+                  alt="social icon"
+                />
+              </li>
+              <li class="footer__item">
+                <img
+                  class="footer__item-image"
+                  src="./images/socials/youtube.svg"
+                  alt="social icon"
+                />
+              </li>
+              <li class="footer__item">
+                <img
+                  class="footer__item-image"
+                  src="./images/socials/tiktok.svg"
+                  alt="social icon"
+                />
+              </li>
+            </ul>
+          </div>
+          <div class="footer__copyright">
+            <span>Privacy</span>
+            <span>Google Nest Commitment to Privacy</span>
+            <span>Sales Terms</span>
+            <span>Terms of Service</span>
+            <span>Careers</span>
+          </div>
+        </div>
+      </footer>
     </main>
-</body>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <script src="./script.js"></script>
+  </body>
 </html>
