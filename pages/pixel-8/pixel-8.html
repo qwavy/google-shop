@@ -4,6 +4,10 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
+    />
     <link rel="stylesheet" href="pixel-8.css" />
   </head>
   <body>
@@ -11,17 +15,17 @@
     <main>
       <section class="hero">
         <div class="hero__wrapper">
-            <div class="hero__info hidden">
-                <h1 class="hero__title ">
-                    Powerful in every way. Helpful every day.
-                  </h1>
-                  <span class="hero__price">From $499</span>
-                  <button class="hero__button">Buy</button>
-            </div>
+          <div class="hero__info hidden">
+            <h1 class="hero__title">
+              Powerful in every way. Helpful every day.
+            </h1>
+            <span class="hero__price">From $499</span>
+            <button class="hero__button">Buy</button>
+          </div>
 
           <video class="hero__video" autoplay muted>
             <source
-              src="https://storage.googleapis.com/mannequin/blobs/f2db9937-0012-4ab1-a015-9036291f9a78.webm"
+              src="/video/pixel-8/f2db9937-0012-4ab1-a015-9036291f9a78 (online-video-cutter.com).mp4"
             />
           </video>
         </div>
@@ -38,22 +42,22 @@
             <h3 class="promotion__name">
               Clear, vivid Actua display, even in direct sunlight.
             </h3>
-            <video autoplay muted>
+            <video class="promotion__video" data-observe-intersection muted>
               <source
                 src="https://storage.googleapis.com/mannequin/blobs/06494031-a987-4929-b3df-1afb98234bc1.mp4"
               />
             </video>
           </div>
-          <div class="promotion__item">
+          <div class="promotion__item promotion__item-blocks">
             <div class="promotion__item-block">
-              <h3 class="promotion__item-name">
-                Fast-charging, all-day battery you can count on.
-              </h3>
               <img
                 class="promotion__item-image"
                 src="https://lh3.googleusercontent.com/4oUAGxedTunsrTNNx8IbodRdwmCKmG84pkZhoRz0cSu84d8NcfepGR5pPAino4QE0MB06rSVaB7zm41YruYu_9QOqTvC3YRa5D0"
                 alt="promotion item block"
               />
+              <h3 class="promotion__item-name">
+                Fast-charging, all-day battery you can count on.
+              </h3>
             </div>
             <div class="promotion__item-block">
               <h3 class="promotion__item-name">
@@ -67,7 +71,10 @@
             </div>
           </div>
           <div class="promotion__item">
-            <video autoplay muted>
+            <h3 class="promotion__name">
+              Fresh, modern design with a satin finish.
+            </h3>
+            <video class="promotion__video" muted>
               <source
                 src="https://storage.googleapis.com/mannequin/blobs/91f6b72a-fda2-4431-9ad1-78432bbba153.webm"
               />
@@ -75,8 +82,109 @@
           </div>
         </div>
       </section>
-    </main>
+      <section class="ai">
+        <div class="ai__wrapper">
+          <div class="ai__hero">
+            <h2 class="ai__hero-title">
+              Every moment, even better than you remember it.
+            </h2>
+            <p class="ai__hero-description">
+              The fully upgraded Pixel 8 camera uses Google AI to help you
+              create memorable photos and videos, day or night.
+            </p>
+            <img
+              class="ai__hero-image"
+              src="https://lh3.googleusercontent.com/bYqrYe2Xyld9Owia72FvCZjjJVZKUSCLcAQVPF4I51zmozzBPq89Ag-l63USd3tOS4dsevSuGn8Pnu6lT9lRqKiOECqL0Hcx7TA=s0"
+              alt="ai hero image"
+            />
+          </div>
+          <div class="ai__camera">
+            <img
+              class="ai__camera-image"
+              src="https://lh3.googleusercontent.com/OEpJf3UarHlFgboYf-uOacRxHgKhSbfiZThwWmX77DSmMqD86YEyakckX1XWNg5hKjn9k6YGVqOg683z4dmq0yXUuDCAsmhlSZI=rw-e365-nu-w1200"
+              alt="ai camera image"
+            />
+            <video class="ai__camera-video hidden" autoplay muted>
+              <source
+                src="https://storage.googleapis.com/mannequin/blobs/6b44a864-5417-45da-8694-729352e5198f.mp4"
+              />
+            </video>
+            <div class="ai__camera-buttons">
+              <button
+                class="ai__camera-button ai__camera-button_image"
+                disabled
+              >
+                Incredible videos on every take.
+              </button>
+              <button class="ai__camera-button ai__camera-button_zoom">
+                Get way close from far away.
+              </button>
+            </div>
+          </div>
+          <div class=" swiper ai__details">
+            <div class="ai__details-wrapper swiper-wrapper">
+              <div class="ai__details-item swiper-slide">
+                <h3 class="ai__details-title">Tiny details. Epic photos.</h3>
+                <p class="ai__details-description">
+                  Now with Macro Focus, the Pixel 8 camera reveals vivid color
+                  and striking contrast in even the smallest subjects.
+                </p>
+              </div>
+              <div class="ai__details-item swiper-slide">
+                <img
+                  class="ai__details-image"
+                  src="https://lh3.googleusercontent.com/1f06l7EnVCX4pzI-WVhQczXo0NeNQsyB9jwod8k1AwiM15VDpoJpWKrncOcxrf0O7KaQOEDyPmcy4U3AyZzyCUedo6qrlxjozl1b"
+                  alt="swiper slide image"
+                />
+              </div>
+              <div class="ai__details-item swiper-slide">
+                <h3 class="ai__details-title">
+                  Brilliant photos, dusk to dawn.
+                </h3>
+                <p class="ai__details-description">
+                  The Pixel Camera uses Night Sight to create vibrant photos of
+                  everything from city lights to starry skies.
+                </p>
+              </div>
+              <div class="ai__details-item swiper-slide">
+                <img
+                  class="ai__details-image"
+                  src="https://lh3.googleusercontent.com/rWtYB3I4S4t7ZpZ7FzSPrO7IOQaIA0wXyzElasL7ndQ_vNaMpNJs2Ddm1obo9h9ga1QSU6x41eSYF8XEMJNEnw1EVDjD2mmGQA"
+                  alt="swiper slide image"
+                />
+              </div>
+              <div class="ai__details-item swiper-slide">
+                <h3 class="ai__details-title">
+                  Stunning photos come standard.
+                </h3>
+                <p class="ai__details-description">
+                  HDR+ on the Pixel Camera makes photos look better by
+                  automatically adjusting for color and lighting. And with Real
+                  Tone, different skin tones are represented authentically.
+                </p>
+              </div>
+              <div class="ai__details-item swiper-slide">
+                <img
+                  src="https://lh3.googleusercontent.com/AqipAU3PrMaGa4KLiayZpSyOdAJP8qAxIZsK1e-pv80fMVqhRJc88OSlYpTwHeQ7B_p7ZgiLnkWKsAN2_vr6XfDxUHhWaOptHr8D"
+                  alt="swiper slide image"
+                  class="ai__details-image"
+                />
+              </div>
+            </div>
+            <div class="swiper-scrollbar"></div>
+          </div>
+          <div class="swiper slider">
 
+            <div class="swiper-wrapper">
+              <div class="swiper-slide">1</div>
+              <div class="swiper-slide">1</div>
+              <div class="swiper-slide">1</div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
     <script src="pixel-8.js"></script>
   </body>
 </html>
