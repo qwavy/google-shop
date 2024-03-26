@@ -7,23 +7,23 @@ const aiCameraVideo = document.querySelector('.ai__camera-video')
 const aiButtonImage = document.querySelector(".ai__camera-button_image")
 const aiButtonZoom = document.querySelector('.ai__camera-button_zoom')
 
-// const options = {
-//     root:null,
-//     rootMargin: '0px',
-//     threshold: 0
-// }
+const editGroupVideo = document.querySelector('.edit__item-group')
+const editReimagineVideo = document.querySelector('.edit__item-reimagine')
+const editSoundsVideo = document.querySelector('.edit__item-sounds')
 
-let observer = new IntersectionObserver(
-  (elem) => {
-    console.log(elem[0].target)
-    elem[0].target.play()
-  },
-  { threshold: 0.4 }
-);
+const editGroupButton = document.querySelector('.edit__button-group')
+const editReimagineButton = document.querySelector('.edit__button-reimagine')
+const editSoundsButton = document.querySelector('.edit__button-sounds')
 
-promotionVideo.forEach((elem) => {
-    observer.observe(elem)
-})
+
+// слайдер для секции ai блока details
+const swiperPixel = new Swiper(".ai__details ", {
+  slidesPerView: 3,
+  spaceBetween: 30,
+});
+
+// менять видео когда заканчивается первое видео у секции hero
+
 const changeVideo = (video, src) => {
   video.src = src;
 };
@@ -41,6 +41,21 @@ video.addEventListener(
   { once: true }
 );
 
+// что бы видео проигровалось при попадания в поле зрения пользователя
+
+let observer = new IntersectionObserver(
+  (elem) => {
+    console.log(elem[0].target)
+    elem[0].target.play()
+  },
+  { threshold: 0.4 }
+);
+
+promotionVideo.forEach((elem) => {
+    observer.observe(elem)
+})
+
+// переключение видео по кнопки у секции ai 
 
 aiButtonImage.addEventListener(('click') , () => {
 
@@ -71,17 +86,33 @@ aiButtonZoom.addEventListener(('click') , () => {
         aiCameraImage.classList.toggle('hidden')
         aiCameraVideo.classList.toggle('hidden')
     }
-
-
-    // aiCameraImage.setAttribute('src','https://storage.googleapis.com/mannequin/blobs/6b44a864-5417-45da-8694-729352e5198f.mp4')
 })
 
-
-const swiper = new Swiper("ai__details ", {
-  slidesPerView: 3,
-});
+// переключение видео по кнопке у секции edit 
 
 
-const swiperTest = new Swiper('slider', {
-  
+editGroupButton.addEventListener(('click') , () => {
+
+  editGroupVideo.classList.remove('hidden')
+  editGroupVideo.play()
+
+  editReimagineVideo.classList.add('hidden')
+  editSoundsVideo.classList.add('hidden')
+
+})
+
+editReimagineButton.addEventListener(('click') , () => {
+  editReimagineVideo.classList.remove('hidden')
+  editReimagineVideo.play()
+
+  editGroupVideo.classList.add('hidden')
+  editSoundsVideo.classList.add('hidden')
+})
+
+editSoundsButton.addEventListener(('click') , () => {
+  editSoundsVideo.classList.remove('hidden')
+  editReimagineVideo.play()
+
+  editGroupVideo.classList.add('hidden')
+  editReimagineVideo.classList.add('hidden')
 })
