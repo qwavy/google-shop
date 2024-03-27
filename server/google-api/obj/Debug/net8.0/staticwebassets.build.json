@@ -1,0 +1,11 @@
+{
+  "Version": 1,
+  "Hash": "xkqMeehgdJkOPQhd/RjYbGjJxm7fv0t4pbT1cCotDCc=",
+  "Source": "google-api",
+  "BasePath": "_content/google-api",
+  "Mode": "Default",
+  "ManifestType": "Build",
+  "ReferencedProjectsConfiguration": [],
+  "DiscoveryPatterns": [],
+  "Assets": []
+}

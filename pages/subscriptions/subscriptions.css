@@ -1,0 +1,190 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+
+
+
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+
+body{
+    max-width: 1280px;
+    margin: auto;
+    font-family: 'Roboto', Arial, Helvetica, sans-serif;
+}
+
+.title{
+    font-size: 35px;
+    padding-bottom: 50px;
+}
+
+.name{
+    font-size: 25px;
+    padding: 30px 0;
+}
+
+.description{
+    text-align: center;
+    max-width: 60%;
+    line-height: 40px;
+    font-size: 20px;
+}
+
+.wrapper{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column; 
+}
+
+.section{
+    margin-top: 100px;
+}
+
+.container{
+    display: flex;
+}
+
+.hero{
+    margin-top: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.hero__wrapper{
+    text-align: center;
+}
+
+.hero__title{
+    padding: 50px;
+    font-size: 64px;
+}
+
+.hero__description{
+    padding-bottom: 50px;
+
+    font-size: 20px;
+}
+
+.hero__container{
+    width: 100%;
+    display: flex;
+    justify-content: space-evenly;
+    gap: 50px;
+}
+.hero__item-icon-block{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 200px;
+    height: 200px;
+    background-color: #f8f9fa;
+}
+
+.hero__item-icon{
+
+    width: 64px;
+    height: 64px;
+}
+
+
+.hero__item-name{
+    text-align: center;
+    padding: 20px;
+    font-weight: normal;
+}
+
+
+/* Featured */
+
+
+.featured{
+    margin-top: 100px;
+
+}
+
+
+
+.featured__wrapper{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+
+
+.featured__description{
+    text-align: center;
+    max-width: 30%;
+    line-height: 25px;
+}
+
+/* storage */
+
+
+.storage{
+    margin-top: 100px;
+
+}
+
+
+
+.storage__wrapper{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.storage__container{
+    display: flex;
+}
+
+.storage__item{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+
+.storage__item-description{
+    text-align: center;
+    max-width: 60%;
+    line-height: 40px;
+    font-size: 20px;
+}
+
+
+/* phone */
+
+.phone{
+    margin-top: 100px;
+}
+
+.phone__wrapper{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+
+
+
+
+/* music */
+
+.music__container{
+    /* width: 70%; */
+    gap: 150px;
+}
+
+.music__item-image{
+    width: 350px;
+    height: 350px;
+}
