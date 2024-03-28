@@ -6,5 +6,6 @@ class MyDb : DbContext
         : base(options) {}
 
         public DbSet<User> Users => Set<User>();
+        public DbSet<Product> Products => Set<Product>();
         public DbSet<CartProduct> CartProducts => Set<CartProduct>(); 
 }
