@@ -1,3 +1,4 @@
+using System.Net;
 using System.Runtime.CompilerServices;
 using Microsoft.EntityFrameworkCore;
 
@@ -19,10 +20,10 @@ app.UseCors();
 
 // auth
 
-app.MapGet("/users", async (MyDb db) => 
+app.MapGet("/users", async (MyDb db) =>
     await db.Users.ToListAsync());
 
-app.MapPost("/register", async (User user, MyDb db ) =>
+app.MapPost("/register", async (User user, MyDb db) =>
 {
     db.Users.Add(user);
     await db.SaveChangesAsync();
@@ -36,10 +37,12 @@ app.MapPost("/login", (User user, MyDb db) =>
     {
         if (elem.Email == user.Email)
         {
-            if(elem.Password == user.Password){
+            if (elem.Password == user.Password)
+            {
                 return Results.Ok("success login");
             }
-            else{
+            else
+            {
                 return Results.NotFound("password not correct");
             }
         }
@@ -48,49 +51,104 @@ app.MapPost("/login", (User user, MyDb db) =>
 });
 
 // products
-app.MapGet("/products" , async (MyDb db) => 
+app.MapGet("/products", async (MyDb db) =>
     await db.Products.ToListAsync()
 );
 
-app.MapGet("/products/{id}" , async (int id , MyDb db) => 
+app.MapGet("/products/{id}", async (int id, MyDb db) =>
     await db.Products.FindAsync(id)
         is Product product
             ? Results.Ok(product)
             : Results.NotFound()
 );
 
-app.MapGet("/products/filter/{filterMethod}" , async (string filterMethod , MyDb db) =>
-{   
-    Dictionary<string, object> filterMethods = new Dictionary<string, object>();
+app.MapGet("/products/filter", async (string filterMethod, MyDb db) =>
+{
 
-    filterMethods["phones"] = filterByPhones();
+    Task<List<Product>> filteredProducts = null ;
 
-    static List<string> filterByPhones(){
-// дописать фильтрацию для категории phones
-// JS const filterd = db.Products.filter((elem) => elem.category = "phone")
-        // List<string> = db.Products.FindAll
-
-        return new List<string>() {}
+    if (filterMethod == "phones")
+    {
+        filteredProducts = filterByPhonesAsync(db);
+        // filterByCategoryAsync("phone",db);
     }
+    if (filterMethod == "tablets")
+    {
+        filteredProducts = filterByTabletAsync(db);
+        // filterByCategoryAsync("tablet",db);
+
+    }
+    if(filterMethod == "earphones")
+    {
+        filteredProducts = filterByEarphoneAsync(db);
+        // filterByCategoryAsync("earphone",db);
+
+    }
+
+    var filteredProductsResponse = await filteredProducts;
+    return Results.Ok(filteredProductsResponse);
+
+    async Task<List<Product>> filterByPhonesAsync(MyDb db)
+    {
+        var phones = await db.Products
+            .Where(elem => elem.Category == "phone")
+            .ToListAsync();
+
+        return phones;
+
+    }
+
+    async Task<List<Product>> filterByTabletAsync(MyDb db)
+    {
+        var tablets = await db.Products
+            .Where((elem) => elem.Category == "tablet")
+            .ToListAsync();
+
+        return tablets;
+    }
+
+    async Task<List<Product>> filterByEarphoneAsync(MyDb db)
+    {
+        var earphones = await db.Products
+            .Where((elem) => elem.Category == "earphone")
+            .ToListAsync();
+
+        return earphones;
+    }
+
+    // async Task<List<Product>> filterByCategoryAsync(string categoryMethod,  MyDb db)
+    // {
+    //     var filterByCategoryProducts = await db.Products
+    //         .Where((elem) => elem.Category == categoryMethod)
+    //         .ToListAsync();
+
+    //     return filterByCategoryProducts;
+    // }
 
 });
 
 
-app.MapPost("/products/add" , async ( Product product, MyDb db) => {
+
+
+
+app.MapPost("/AddProducts", async (Product product, MyDb db) =>
+{
     db.Products.Add(product);
     await db.SaveChangesAsync();
-    return Results.Created($"{product.Name} created" ,  product);
+    return Results.Created($"{product.Name} created", product);
 });
 
 
 // cart
-app.MapGet("/cart/{userId}/get" , async (int userId, MyDb db) => {
+app.MapGet("/cart/{userId}/get", async (int userId, MyDb db) =>
+{
     List<CartProduct> objectsList = new List<CartProduct>();
 
 
-    foreach(var elem in db.CartProducts)
+    foreach (var elem in db.CartProducts)
     {
-        if(elem.UserId == userId){
+        if (elem.UserId == userId)
+        {
             objectsList.Add(elem);
         }
     }
@@ -98,18 +156,20 @@ app.MapGet("/cart/{userId}/get" , async (int userId, MyDb db) => {
     return Results.Ok(objectsList);
 });
 
-app.MapPost("/cart/{userId}" , async ( int userId, CartProduct cartProduct , MyDb db) => {
+app.MapPost("/cart/{userId}", async (int userId, CartProduct cartProduct, MyDb db) =>
+{
     db.CartProducts.Add(cartProduct);
     await db.SaveChangesAsync();
     return Results.Ok($"created {cartProduct.Id} for {cartProduct.UserId}");
 });
 
-app.MapDelete("/cart/{userId}/{productId}", async (int userId , int productId , MyDb db) => {
-    foreach(var elem in db.CartProducts)
+app.MapDelete("/cart/{userId}/{productId}", async (int userId, int productId, MyDb db) =>
+{
+    foreach (var elem in db.CartProducts)
     {
-        if(elem.UserId == userId)
+        if (elem.UserId == userId)
         {
-            if(elem.Id == productId)
+            if (elem.Id == productId)
             {
                 db.CartProducts.Remove(elem);
             }
