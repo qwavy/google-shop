@@ -51,9 +51,7 @@ app.MapPost("/login", (User user, MyDb db) =>
 });
 
 // products
-app.MapGet("/products", async (MyDb db) =>
-    await db.Products.ToListAsync()
-);
+
 
 app.MapGet("/products/{id}", async (int id, MyDb db) =>
     await db.Products.FindAsync(id)
@@ -62,70 +60,37 @@ app.MapGet("/products/{id}", async (int id, MyDb db) =>
             : Results.NotFound()
 );
 
-app.MapGet("/products/filter", async (string filterMethod, MyDb db) =>
+app.MapGet("/products", async (string? filterMethod, MyDb db) =>
 {
 
-    Task<List<Product>> filteredProducts = null ;
+    Task<List<Product>> filteredProducts;
 
-    if (filterMethod == "phones")
+
+    if (filterMethod == null)
     {
-        filteredProducts = filterByPhonesAsync(db);
-        // filterByCategoryAsync("phone",db);
+        var allProducts = await db.Products.ToListAsync();
+        filteredProducts = Task.FromResult(allProducts);
     }
-    if (filterMethod == "tablets")
+    else
     {
-        filteredProducts = filterByTabletAsync(db);
-        // filterByCategoryAsync("tablet",db);
-
+        filteredProducts = filterByCategoryAsync(filterMethod, db);
     }
-    if(filterMethod == "earphones")
-    {
-        filteredProducts = filterByEarphoneAsync(db);
-        // filterByCategoryAsync("earphone",db);
-
-    }
-
     var filteredProductsResponse = await filteredProducts;
     return Results.Ok(filteredProductsResponse);
 
-    async Task<List<Product>> filterByPhonesAsync(MyDb db)
+    async Task<List<Product>> filterByCategoryAsync(string categoryMethod,  MyDb db)
     {
-        var phones = await db.Products
-            .Where(elem => elem.Category == "phone")
+
+
+        var filterByCategoryProducts = await db.Products
+            .Where((elem) => elem.Category == categoryMethod)
             .ToListAsync();
 
-        return phones;
-
+        return filterByCategoryProducts;
     }
-
-    async Task<List<Product>> filterByTabletAsync(MyDb db)
-    {
-        var tablets = await db.Products
-            .Where((elem) => elem.Category == "tablet")
-            .ToListAsync();
-
-        return tablets;
-    }
-
-    async Task<List<Product>> filterByEarphoneAsync(MyDb db)
-    {
-        var earphones = await db.Products
-            .Where((elem) => elem.Category == "earphone")
-            .ToListAsync();
-
-        return earphones;
-    }
-
-    // async Task<List<Product>> filterByCategoryAsync(string categoryMethod,  MyDb db)
-    // {
-    //     var filterByCategoryProducts = await db.Products
-    //         .Where((elem) => elem.Category == categoryMethod)
-    //         .ToListAsync();
-
-    //     return filterByCategoryProducts;
-    // }
 
 });
+
 
 
 
