@@ -30,7 +30,7 @@ body{
     border: none;
 }
 
-.header{
+/* .header{
     max-width: 1280px;
     margin: auto;
     width: 100%;
@@ -133,7 +133,7 @@ display: none;
 
 .burger-menu__item{
     padding: 20px;
-}
+} */
 
 /* main */
 
@@ -433,7 +433,7 @@ display: none;
 /* footer */
 
 
-.footer{
+/* .footer{
     margin-top: 100px;
 }
 
@@ -457,4 +457,4 @@ display: none;
     width: 70%;
     display: flex;
     justify-content: space-evenly;
-}
+} */

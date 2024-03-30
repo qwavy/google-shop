@@ -1,0 +1,30 @@
+.swiper{
+    width: 100%;
+
+}
+
+
+.slide-image{
+    height: 500px;
+    width: 600px;
+}
+.slide-image-calls{
+    background-image: url(https://lh3.googleusercontent.com/ErsW7CoS5mS2xEZxAxgq3jbMVXpsZQHzR-99y0n4Eray4-XrzniHp3iTlLBE3u0YkEORcE97LJh_eNbj9-Mr0g95z6efRajOYrN3);
+    background-repeat: no-repeat;
+    /* background-size: cover; */
+}
+.slide-image-listening{
+    background-image: url(https://lh3.googleusercontent.com/TwQZKzemRdOuAz9Ps1YU7SpkUfuo1gdComEFH5SFvxXcIU8-eGqMTHr6ZQ5vM9Muwlge9VCXdMRZZ-KKT6jSipq4ytYc0QU7b1M=rw-e365-nu-w600);
+    background-repeat: no-repeat;
+    /* background-size: cover; */
+}
+.slide-image-chat{
+    background-image: url(https://lh3.googleusercontent.com/ARFppCppBsuHAWzNMKWIHUdJEC-iNC3PxhkeuzdiWKyEEK1VqDX3kOMH1JG6SRFAH0-M6rvwMP-F_k3OTeV024cxOE4rE_sOwA=rw-e365-nu-w600);
+    background-repeat: no-repeat;
+    /* background-size: cover; */
+}
+.slide-image-gaming{
+    background-image: url(https://lh3.googleusercontent.com/JSLQa3uw3hFeCBUCXH1uIaB2r6Cu6UVmniGsu7sDI8may6atFWrt5X3Xix7A4zlxmiSG1ZHe7jZm08NI41wrV6Gb5CALgyhQWnE);
+    background-repeat: no-repeat;
+    /* background-size: cover; */
+}

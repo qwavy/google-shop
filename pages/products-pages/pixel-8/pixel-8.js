@@ -35,6 +35,7 @@ video.addEventListener(
       video,
       "https://storage.googleapis.com/mannequin/blobs/122ad7a7-27a0-418c-9749-dccb0b625fd9.webm"
     );
+    
     video.classList.add("half-size");
     heroInfo.classList.remove("hidden");
   },
@@ -93,6 +94,11 @@ aiButtonZoom.addEventListener(('click') , () => {
 
 editGroupButton.addEventListener(('click') , () => {
 
+  editReimagineButton.removeAttribute('disabled','')
+  editSoundsButton.removeAttribute('disabled','')
+
+  editGroupButton.setAttribute('disabled','')
+
   editGroupVideo.classList.remove('hidden')
   editGroupVideo.play()
 
@@ -101,7 +107,13 @@ editGroupButton.addEventListener(('click') , () => {
 
 })
 
-editReimagineButton.addEventListener(('click') , () => {
+editReimagineButton.addEventListener(('click') , () => {  
+  
+  editGroupButton.removeAttribute('disabled','')
+  editSoundsButton.removeAttribute('disabled','')
+
+  editReimagineButton.setAttribute('disabled','')
+
   editReimagineVideo.classList.remove('hidden')
   editReimagineVideo.play()
 
@@ -110,6 +122,12 @@ editReimagineButton.addEventListener(('click') , () => {
 })
 
 editSoundsButton.addEventListener(('click') , () => {
+
+  editGroupButton.removeAttribute('disabled','')
+  editReimagineButton.removeAttribute('disabled','')
+
+  editSoundsButton.setAttribute('disabled','')
+  
   editSoundsVideo.classList.remove('hidden')
   editReimagineVideo.play()
 
