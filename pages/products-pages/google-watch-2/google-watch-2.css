@@ -1,11 +1,11 @@
-@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
-
+/* @import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap'); */
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap');
 
 
 body{
     margin: auto;
     max-width: 1280px;
-    font-family: 'Roboto', Arial, Helvetica, sans-serif;
+    font-family: 'Open Sans', Arial, Helvetica, sans-serif;
 }
 
 *{
@@ -17,6 +17,32 @@ body{
 
 .hidden{
     display: none !important;
+}
+
+.active{
+    border-bottom: 1px;
+}
+
+.tab-buttons{
+    padding-top: 50px;
+    display: flex;
+    justify-content: center;
+    gap: 50px;    
+}
+
+.tab-button{
+    width: 200px;
+    height: 50px;
+    border: none;
+    color: #DEE0D9;
+    background-color: inherit;
+    border-bottom:1px solid #DEE0D9;
+
+}
+.tab-button:disabled{
+    border-bottom:1px solid #000;
+    color: #000;
+    
 }
 
 /* .half-size{
@@ -76,6 +102,13 @@ body{
 
 /* help */
 
+
+.help__title{
+    margin: 50px 0;
+    font-size: 35px;
+    display: flex;
+    justify-content: center;
+}
 .help__container{
     display: flex;
     flex-wrap: wrap;
@@ -84,10 +117,20 @@ body{
 
 
 .help__item{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
     width: 560px;
     height: 700px;
     background-color: #E4EEFD;
-
+    border-radius: 20px;
+    margin-bottom: 40px;
+    text-align: center;
+}
+.help__item-name{
+    width: 80%;
+    font-size: 30px;
 }
 
 .help__item-small{
@@ -105,3 +148,40 @@ body{
     height: 100%;
     transform: scale(1.5);
 }
+
+.help__item-image{
+    width: 100%;
+    height: 100%;
+}
+
+
+/* improvements */
+
+.improvements__title{
+    margin: 50px 0;
+    font-size: 47px;
+    text-align: center;
+}
+
+.improvements__image{
+    width: 100%;
+    border-radius: 12px;
+}
+
+/* check */
+
+.check__title{
+    margin: 50px 0;
+    font-size: 40px;
+    text-align: center;
+}
+
+.check__item > video{
+    width: 100%;
+    height: 100%;
+}
+.check__item > img{
+    width: 100%;
+    height: 100%;
+}
+
