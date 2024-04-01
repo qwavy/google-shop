@@ -28,6 +28,7 @@ body{
     background-color: #5f6368;
     color: #FFFF;
     border: none;
+    transition: 3s all;
 }
 
 /* .header{
@@ -175,6 +176,15 @@ display: none;
     border-radius: 5px;
 }
 
+.hero__button{
+    cursor: pointer;
+    z-index: 2;
+}
+
+.hero__button:hover{
+    background-color: #FFF;
+    transition: 3s;
+}
 
 .hero__video{
     width: 100%;

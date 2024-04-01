@@ -15,12 +15,31 @@ body{
 
 }
 
+.wrapper{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
 .hidden{
     display: none !important;
 }
 
 .active{
     border-bottom: 1px;
+}
+
+.section-image{
+    width: 565px;
+    height: 700px;
+}
+
+.info{
+    width: 50%;
+}
+
+.title{
+    font-size: 45px;
 }
 
 .tab-buttons{
@@ -95,6 +114,7 @@ body{
 }
 .hero__video{
     width: 60%;
+    transform: scale(1.2);
     /* max-width: 1280px; */
     /* height: 600px; */
 }
@@ -105,7 +125,6 @@ body{
 
 .help__title{
     margin: 50px 0;
-    font-size: 35px;
     display: flex;
     justify-content: center;
 }
@@ -159,7 +178,6 @@ body{
 
 .improvements__title{
     margin: 50px 0;
-    font-size: 47px;
     text-align: center;
 }
 
@@ -172,7 +190,6 @@ body{
 
 .check__title{
     margin: 50px 0;
-    font-size: 40px;
     text-align: center;
 }
 
@@ -185,3 +202,122 @@ body{
     height: 100%;
 }
 
+
+/* health */
+
+.health{
+    margin: 100px 0;
+}
+
+
+
+
+
+.health__info{  
+    width: 50%;
+}
+
+.health__info-title{
+    padding: 30px 0;
+}
+
+
+
+.accordions{
+
+}
+.accordion{
+    display: grid;
+    grid-template-rows: 42px 0fr;
+    transition: grid-template-rows 0.3s ease;
+    padding: 30px 0;
+}
+.accordion-content{
+    padding-top: 10px;
+    overflow: hidden;
+
+}
+
+.accordion.active {
+    grid-template-rows: 42px 1fr;
+}
+
+/* assistant */
+
+.assistant{
+    margin-top: 100px;
+}
+
+
+
+
+.assistant__info-title{
+    padding: 20px 0;
+}
+
+.assistant__info-description{
+    
+    font-size: 20px;
+}
+
+/* goals */
+.goals{
+    margin-top: 100px;
+}
+
+
+
+/* collection */
+
+.collection{
+    margin-top: 100px;
+}
+
+.collection__container{
+    display: flex;
+    flex-direction: column;
+    /* height: 1200px; */
+}
+
+.collection__blocks{
+    display: flex;
+    justify-content: space-between;
+}
+
+.collection__block{
+    text-align: center;
+    padding: 0 50px;
+
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+    border-radius: 12px;
+    background-color: #E4EEFD;
+}
+
+.block-name{
+    padding-bottom: 10px;
+    font-size: 30px;
+}
+
+.block-description{
+    font-size: 20px;
+}
+
+.block-image{
+    width: 55%;
+}
+
+.collection__blocks:nth-child(2){
+    margin-top: 100px;
+}
+
+.block-video{
+    border-radius: 12px;
+    width: 55%;
+}
+
+.collection__block{
+    width: 40%;
+}
