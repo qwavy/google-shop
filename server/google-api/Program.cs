@@ -2,9 +2,31 @@ using System.Net;
 using System.Runtime.CompilerServices;
 using Microsoft.EntityFrameworkCore;
 
+// var builder = WebApplication.CreateBuilder(args);
+// builder.Services.AddDbContext<MyDb>(opt => opt.UseInMemoryDatabase("Users"));
+// builder.Services.AddDatabaseDeveloperPageExceptionFilter();
+
+// builder.Services.AddCors(options =>
+// {
+//     options.AddDefaultPolicy(builder =>
+//     {
+//         builder.AllowAnyOrigin().AllowAnyMethod().AllowAnyHeader();
+//     });
+// });
+
+// var app = builder.Build();
+
+// app.UseCors();
+
+
 var builder = WebApplication.CreateBuilder(args);
-builder.Services.AddDbContext<MyDb>(opt => opt.UseInMemoryDatabase("Users"));
-builder.Services.AddDatabaseDeveloperPageExceptionFilter();
+
+builder.Services.AddDbContext<MyDb>(options =>
+{
+    options.UseNpgsql(builder.Configuration.GetConnectionString("DefaultConnection"));
+});
+
+builder.Services.AddScoped<MyDb>();
 
 builder.Services.AddCors(options =>
 {
@@ -16,7 +38,15 @@ builder.Services.AddCors(options =>
 
 var app = builder.Build();
 
+if (app.Environment.IsDevelopment())
+{
+    using var scope = app.Services.CreateScope();
+    var dbContext = scope.ServiceProvider.GetRequiredService<MyDb>();
+    dbContext.Database.EnsureCreated();
+};
+
 app.UseCors();
+
 
 // auth
 
@@ -93,9 +123,6 @@ app.MapGet("/products", async (string? filterMethod, MyDb db) =>
 
 
 
-
-
-
 app.MapPost("/AddProducts", async (Product product, MyDb db) =>
 {
     db.Products.Add(product);
@@ -103,6 +130,14 @@ app.MapPost("/AddProducts", async (Product product, MyDb db) =>
     return Results.Created($"{product.Name} created", product);
 });
 
+
+app.MapDelete("/DeleteProduct/{productId}" , async (int productId , MyDb db) => {
+    var productDel = await db.Products.FindAsync(productId);
+    if(productDel == null) return Results.NotFound();
+    db.Products.Remove(productDel);
+    await db.SaveChangesAsync();
+    return Results.NoContent();
+});
 
 // cart
 app.MapGet("/cart/{userId}/get", async (int userId, MyDb db) =>

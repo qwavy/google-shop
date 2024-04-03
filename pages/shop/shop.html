@@ -1,16 +1,47 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="stylesheet" href="shop.css">
-</head>
-<body>
-    <main>
-        <button class="button">click me</button>
-    </main>
-    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
-    <script src="./shop.js"></script>
-</body>
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Product Filter And Search</title>
+    <!-- Google Font -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500&display=swap"
+      rel="stylesheet"
+    />
+    <!-- Stylesheet -->
+    <link rel="stylesheet" href="shop.css" />
+  </head>
+  <body>
+    <div class="wrapper">
+      <div id="search-container">
+        <input
+          type="search"
+          id="search-input"
+          placeholder="Search product name here.."
+        />
+        <button id="search">Search</button>
+      </div>
+      <div id="buttons">
+        <button class="button-value" >All</button>
+        <button class="button-value button-value-phone" >
+          phone
+        </button>
+        <button class="button-value button-value-watch" >
+          watch
+        </button>
+        <button class="button-value button-value-tablet" >
+          tablet
+        </button>
+        <button class="button-value button-value-earphone" >
+          earphone
+        </button>
+        <button class="button-value button-value-other" >
+            other
+          </button>
+      </div>
+      <ul class="products"></ul>
+    </div>
+    <!-- Script -->
+    <script src="shop.js"></script>
+  </body>
 </html>
