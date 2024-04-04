@@ -97,10 +97,7 @@ img {
     color: #ffffff;
 }
 
-.not-active{
-    background-color: #FFF !important;
-    color: #1967d2;
-}
+
 
 @media screen and (max-width: 720px) {
     img {
