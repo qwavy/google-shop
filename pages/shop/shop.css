@@ -11,6 +11,10 @@ body {
     background-color: #ffffff;
 }
 
+
+
+
+
 .wrapper {
     width: 95%;
     margin: 0 auto;
@@ -97,6 +101,65 @@ img {
     color: #ffffff;
 }
 
+
+
+/* product card */
+
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+
+body {
+    margin: 3em;
+    background-color: mintcream;
+}
+.product-card{
+    max-width: 12em;
+    background-color: #fff;
+    padding: 1em;
+    font-family: 'Roboto', Arial, Helvetica, sans-serif;
+
+}
+.product-card-image{
+    max-width: 100%;
+    transition: 0.5s all;
+}
+
+.product-card-name{
+    font-size: 1.3em;
+    margin: 0.5em 0;
+
+}
+
+.product-card-actions{
+    font-size: 1.2 em;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.product-card-button {
+    background-color: #000;
+    color: #fff;
+    border: none;
+    border-radius: 50%;
+    width: 25px;
+    height: 25px;
+    font-size: 1em;
+}
+
+.product-card-image:hover{
+    transform: scale(1.1);
+}
+
+.product-card-button:hover {
+    color: #000;
+    background-color: #fff;
+}
+
+@media screen and (max-width: 576px) {
+    .product-card {
+        font-size: 0.9em;
+    }
+};
 
 
 @media screen and (max-width: 720px) {

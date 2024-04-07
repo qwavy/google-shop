@@ -156,8 +156,18 @@ app.MapGet("/cart/{userId}/get", async (int userId, MyDb db) =>
     return Results.Ok(objectsList);
 });
 
-app.MapPost("/cart/{userId}", async (int userId, CartProduct cartProduct, MyDb db) =>
+app.MapPost("/cart/{userId}/{id}", async (int userId, int id, MyDb db) =>
 {
+    var product = await db.Products.FindAsync(id);
+    var cartProduct = new CartProduct
+    {
+        UserId = userId,
+        Name = product.Name,
+        Price = product.Price,
+        Category = product.Category,
+        Image = product.Image
+
+    };
     db.CartProducts.Add(cartProduct);
     await db.SaveChangesAsync();
     return Results.Ok($"created {cartProduct.Id} for {cartProduct.UserId}");

@@ -3,19 +3,24 @@ const buttonWatch = document.querySelector(".button-value-watch");
 const buttonTablet = document.querySelector(".button-value-tablet");
 const buttonEarphone = document.querySelector(".button-value-earphone");
 const buttonOther = document.querySelector(".button-value-other");
+const buttonAll = document.querySelector(".button-value-all");
 const buttons = document.querySelectorAll(".button-value");
-
-
 
 const productsTemplate = document.querySelector(".products");
 
 const sendData = document.querySelector(".sendData");
 
-const buttonProductBuy = document.querySelector(".product-buy")
+const buttonProductBuy = document.querySelectorAll(".product-card-button");
 
-const numbers = [33, 2, 8];
-numbers.sort();
-console.log(0.2 + 0.4);
+buttonAll.addEventListener("click", () => {
+  buttons.forEach((button) => {
+    button.classList.remove("active");
+  });
+
+  buttonAll.classList.add("active");
+
+  getAllProducts();
+});
 
 buttonPhone.addEventListener("click", () => {
   buttons.forEach((button) => {
@@ -24,8 +29,7 @@ buttonPhone.addEventListener("click", () => {
 
   buttonPhone.classList.add("active");
 
-  getFilteredProducts("phone");
-
+  getFilteredProducts("phone", createBuyButton);
 });
 
 buttonWatch.addEventListener("click", () => {
@@ -34,10 +38,7 @@ buttonWatch.addEventListener("click", () => {
   });
   buttonWatch.classList.add("active");
 
-
-  getFilteredProducts("watch");
-
-
+  getFilteredProducts("watch", createBuyButton);
 });
 
 buttonTablet.addEventListener("click", () => {
@@ -47,8 +48,7 @@ buttonTablet.addEventListener("click", () => {
 
   buttonTablet.classList.add("active");
 
-  getFilteredProducts("tablet");
-
+  getFilteredProducts("tablet", createBuyButton);
 });
 
 buttonEarphone.addEventListener("click", () => {
@@ -58,8 +58,7 @@ buttonEarphone.addEventListener("click", () => {
 
   buttonEarphone.classList.add("active");
 
-  getFilteredProducts("earphone");
-
+  getFilteredProducts("earphone", createBuyButton);
 });
 
 buttonOther.addEventListener("click", () => {
@@ -69,36 +68,55 @@ buttonOther.addEventListener("click", () => {
 
   buttonOther.classList.add("active");
 
-  getFilteredProducts("other");
+  getFilteredProducts("other", createBuyButton);
 });
 
-const getFilteredProducts = async (filterMethod) => {
-    try {
-      const others = await axios.get(
-        `https://localhost:7297/products/?filterMethod=${filterMethod}`
-      );
-      renderHtml(others.data);
-    } catch (e) {
-      console.log(e);
-    }
-}
+const getFilteredProducts = async (filterMethod, createBuyButton) => {
+  try {
+    const others = await axios.get(
+      `https://localhost:7297/products/?filterMethod=${filterMethod}`
+    );
+    renderHtml(others.data);
+  } catch (e) {
+    console.log(e);
+  }
+};
+
+const getAllProducts = async () => {
+  try {
+    const products = await axios.get("https://localhost:7297/products");
+    console.log(products);
+    renderHtml(products.data);
+  } catch (e) {
+    console.log(e);
+  }
+};
 
 const renderHtml = (products) => {
   const html = products
     .map(
-      (product) => `<div class="product">
-    <img class="product-image" src=${product.image} alt="product image"/>
-    <h3 class="product-name">${product.name}</h3>
-    <p class="product-price">${product.price}</p>
-    <button class="product-buy" >Add</button>
-    </div>`
+      (product) => `    <div class="product-card">
+      <img class="product-card-image" src=${product.image} alt="">
+      <h4 class="product-card-name">${product.name}</h4>
+      <div class="product-card-actions">
+          <span class="product-card-price">${product.price}</span>
+          <button class="product-card-button" onClick="createBuyButton(${product.id})">+</button>
+      </div>
+  </div>`
     )
     .join("");
   productsTemplate.innerHTML = html;
 };
 
-buttonProductBuy.addEventListener(("click") , () => {
-  axios.post("/cart/1" , {
-    
+const createBuyButton = (id) => {
+  axios.post(`https://localhost:7297/cart/1/${id}` , {
   })
-})
+  .then((response) => console.log(response))
+};
+
+
+sendData.addEventListener("click", () => {
+  axios
+    .get("https://localhost:7297/products")
+    .then((response) => console.log(response));
+});

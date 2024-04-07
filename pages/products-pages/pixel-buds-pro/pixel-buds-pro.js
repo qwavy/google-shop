@@ -12,5 +12,6 @@ for(let i = 0; i < accordion.length;i++){
     accordion[i].addEventListener("click",() => { 
         console.log("asdlfkj") 
         accordion[i].classList.toggle("active") 
+        accordionName[i].classList.toggle("opened")
     }) 
 }

@@ -219,12 +219,13 @@ body {
     width: 80%;
     margin-top: 10px;
     border-radius: 16px;
+
 } 
 
 
 .accordion-name{
     padding: 0 20px;
-
+    
 }
 
 .accordion-content{ 
@@ -237,6 +238,17 @@ body {
  
 .accordion.active { 
     grid-template-rows: 42px 1fr; 
+}
+
+
+.arrow{
+    background-image: url(/images/icons/arrow-down.svg);
+    background-repeat: no-repeat;
+    background-position: 95%;
+    background-size: 30px;
+}
+.arrow.opened{
+    background-image: url(/images/icons/arrow-up.svg);
 }
 
 /* sound */
