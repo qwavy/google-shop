@@ -1,6 +1,7 @@
 const heroIntro = document.querySelector('.hero__intro')
 const heroVideo = document.querySelector('.hero__video')
 const heroInner = document.querySelector('.hero__inner')
+const heroInfo = document.querySelector(".hero__info")
 
 const checkButtonSigns = document.querySelector('.check__button-signs')
 const checkButtonsSteps = document.querySelector('.check__button-steps')
@@ -20,7 +21,7 @@ heroIntro.addEventListener("ended",() => {
     heroIntro.classList.add('hidden')
     // heroVideo.classList.add("half-size");
     heroInner.classList.remove("hidden");
-
+    heroInfo.classList.add('left-pad-50')
 }, {once:true})
 
 checkButtonSigns.addEventListener(('click') , () => {
@@ -63,6 +64,7 @@ for(let i = 0; i < accordion.length;i++){
     accordion[i].addEventListener("click",() => {
         console.log("asdlfkj")
         accordion[i].classList.toggle("active")
+        accordionName[i].classList.toggle("opened")
     })
 }
 
