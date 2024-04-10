@@ -6,67 +6,72 @@ const buttonOther = document.querySelector(".button-value-other");
 const buttonAll = document.querySelector(".button-value-all");
 const buttons = document.querySelectorAll(".button-value");
 
-const productsTemplate = document.querySelector(".products");
+const productsTemplate = document.querySelector(".products__container");
 
 const sendData = document.querySelector(".sendData");
 
 const buttonProductBuy = document.querySelectorAll(".product-card-button");
 
-buttonAll.addEventListener("click", () => {
+const accordion = document.querySelectorAll(".accordion") 
+const accordionName = document.querySelectorAll(".accordion-name") 
+const accordionContent = document.querySelectorAll(".accordion-content")
+
+
+for(let i = 0; i < accordion.length;i++){ 
+    accordion[i].addEventListener("click",() => { 
+        accordion[i].classList.toggle("active") 
+        accordionName[i].classList.toggle("opened")
+    }) 
+}
+
+const changeActiveButton = (button) => {
   buttons.forEach((button) => {
     button.classList.remove("active");
   });
 
-  buttonAll.classList.add("active");
+  button.classList.add("active")
+}
+
+
+
+buttonAll.addEventListener("click", () => {
+
+  changeActiveButton(buttonAll)
 
   getAllProducts();
 });
 
 buttonPhone.addEventListener("click", () => {
-  buttons.forEach((button) => {
-    button.classList.remove("active");
-  });
 
-  buttonPhone.classList.add("active");
+  changeActiveButton(buttonPhone)
 
   getFilteredProducts("phone", createBuyButton);
 });
 
 buttonWatch.addEventListener("click", () => {
-  buttons.forEach((button) => {
-    button.classList.remove("active");
-  });
-  buttonWatch.classList.add("active");
+  
+  changeActiveButton(buttonWatch)
 
   getFilteredProducts("watch", createBuyButton);
 });
 
 buttonTablet.addEventListener("click", () => {
-  buttons.forEach((button) => {
-    button.classList.remove("active");
-  });
-
-  buttonTablet.classList.add("active");
+  
+  changeActiveButton(buttonTablet)
 
   getFilteredProducts("tablet", createBuyButton);
 });
 
 buttonEarphone.addEventListener("click", () => {
-  buttons.forEach((button) => {
-    button.classList.remove("active");
-  });
-
-  buttonEarphone.classList.add("active");
+  
+  changeActiveButton(buttonEarphone)
 
   getFilteredProducts("earphone", createBuyButton);
 });
 
 buttonOther.addEventListener("click", () => {
-  buttons.forEach((button) => {
-    button.classList.remove("active");
-  });
-
-  buttonOther.classList.add("active");
+  
+  changeActiveButton(buttonOther)
 
   getFilteredProducts("other", createBuyButton);
 });
@@ -115,8 +120,6 @@ const createBuyButton = (id) => {
 };
 
 
-sendData.addEventListener("click", () => {
-  axios
-    .get("https://localhost:7297/products")
-    .then((response) => console.log(response));
-});
+
+
+getAllProducts()

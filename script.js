@@ -16,3 +16,6 @@ burgerMenu.addEventListener("click", (event) => {
 const swiper = new Swiper(".products__swiper", {
     slidesPerView: 3,
 });
+
+
+
