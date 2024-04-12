@@ -20,14 +20,17 @@ const getUserCart = async (id) => {
 const renderHtml = (products) => {
     const html = products
       .map(
-        (product) => `    <div class="product-card">
-        <div class="product-conteiner">
-          <img class="product-card-image" src=${product.image} alt="">
-          <h4 class="product-card-name">${product.name}</h4>
+        (product) => `    <div class="cart-product-card">
+        <div class="cart-product-conteiner">
+          <img class="cart-product-card-image" src=${product.image} alt="">
+          <div class="cart-product-info">
+          <h4 class="cart-product-card-name">${product.name}</h4>
+          <p class="cart-product-card-category">${product.category}</p>
+          </div>
         </div>
-        <div class="product-card-actions">
-            <span class="product-card-price">${product.price}</span>
-          <button class="product-card-button" onClick="deleteProduct(${product.id})">delete</button>
+        <div class="cart-product-card-actions">
+            <span class="cart-product-card-price">$${product.price}</span>
+          <button class="cart-product-card-button" onClick="deleteProduct(${product.id})"><img src="/images/icons/x.svg" width="28" height="28"/></button>
 
         </div>
     </div>`

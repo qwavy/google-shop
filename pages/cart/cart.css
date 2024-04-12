@@ -1,3 +1,21 @@
+@font-face {
+    font-family: "Google Sans Bold";
+    src: url('/fonts/GoogleSans-Bold.ttf');
+}
+
+@font-face {
+    font-family: "Google Sans Meduim";
+    src: url('/fonts/GoogleSans-Medium.ttf');
+    font-weight: 400;
+}
+@font-face {
+    font-family: "Google Sans";
+    src: url('/fonts/GoogleSans-Regular.ttf');
+}
+body{
+    font-family: 'Google Sans';
+}
+
 .wrapper{
     max-width: 1280px;
     margin: auto;
@@ -6,29 +24,81 @@
     display: flex;
     flex-direction: column;
 }
-.product-card{
+.cart-product-card{
     display: flex;
     justify-content: space-between;
-    border-bottom: 1px solid grey;
+    border-bottom: 1px solid #E4E7EB;
 }
-.product-card-name{
-    display: flex;
-    align-items: center;
-}
-.product-card:nth-child(1){
-    display: flex;
-    justify-content: space-between;
-    border-top: 1px solid grey;
-    border-bottom: 1px solid grey;
-}
-.product-card-actions{
+.cart-product-info{
+    padding-left: 20px;
     display: flex;
     flex-direction: column;
     justify-content: space-evenly;
 }
-.product-card-image{
+.cart-product-card-name{
+    display: flex;
+    align-items: center;
+}
+.cart-product-card:nth-child(1){
+    display: flex;
+    justify-content: space-between;
+    border-top: 1px solid #E4E7EB;
+    border-bottom: 1px solid #E4E7EB;
+}
+.cart-product-card-actions{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+}
+.cart-product-card-image{
     width: 200px;
 }
-.product-conteiner{
+.cart-product-conteiner{
     display: flex;
+}
+.cart-product-card-button{
+    width: 0;
+    height: 0;
+}
+.cart-product-card-price{
+    font-size: 20px;
+}
+
+.checkout{
+    display: flex;
+    flex-direction: column;
+    padding: 40px 0;
+}
+
+.total-block{
+    margin: auto;
+    width: 90%;
+    padding-bottom: 30px;
+    display: flex;
+    justify-content: space-between;
+}
+.total{
+    font-family: "Google Sans Meduim";
+    font-size: 20px;
+}
+
+.total-price{
+    font-size: 25px;
+    font-family: "Google Sans Bold";
+}
+
+.checkout-button{
+    width: 50%;
+    margin: auto;
+    padding: 20px;
+    border-radius: 12px;
+    background-color: #1A73E8;
+    color: #FFF;
+    border: 1px solid #1A73E8;
+    font-family: "Google Sans";
+}
+.checkout-button:hover{
+    cursor: pointer;
+
+    filter: grayscale(.30);
 }
