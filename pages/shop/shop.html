@@ -10,7 +10,8 @@
     />
     <!-- Stylesheet -->
     <link rel="stylesheet" href="shop.css" />
-    <link rel="stylesheet" href="../../template/template.css">
+    <link rel="stylesheet" href="../../template/template.css" />
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css">
   </head>
   <body>
     <header class="header">
@@ -71,7 +72,9 @@
             <a class="header__link" href="#">Accessories</a>
           </li>
           <li class="header__item">
-            <a class="header__link" href="/pages/subscriptions/subscriptions.html"
+            <a
+              class="header__link"
+              href="/pages/subscriptions/subscriptions.html"
               >Subscriptions</a
             >
           </li>
@@ -95,7 +98,7 @@
               fill="black"
             />
           </svg>
-    
+
           <svg
             class="header-action__image"
             width="20"
@@ -109,7 +112,7 @@
               fill="black"
             />
           </svg>
-    
+
           <svg
             class="header-action__image"
             width="20"
@@ -123,7 +126,7 @@
               fill="black"
             />
           </svg>
-    
+
           <svg
             class="header-action__image"
             width="24"
@@ -143,38 +146,32 @@
       </div>
     </header>
     <main>
+      <a href="/pages/cart/cart.html">TO CART</a>
       <section class="filters">
         <div class="filters__wrapper">
           <h2>Filter</h2>
           <div class="filters__container">
-            <div class="filters__item accordion">
-              <h3 class="accordion-name">Filter By Category</h3>
-              <div class="accordion-content">
-                <div class="filters__buttons">
-                  <button class="button-value button-value-all">All</button>
-                  <button class="button-value button-value-phone">All</button>
-                  <button class="button-value button-value-watch">All</button>
-                  <button class="button-value button-value-tablet">All</button>
-                  <button class="button-value button-value-earphone">All</button>
-                  <button class="button-value button-value-other">All</button>
-                </div>
-              </div>
+            <div class="filters__buttons">
+              <button class="button-value button-value-all active">All</button>
+              <button class="button-value button-value-phone">Phone</button>
+              <button class="button-value button-value-watch">Watch</button>
+              <button class="button-value button-value-tablet">Tablet</button>
+              <button class="button-value button-value-earphone">Earphone</button>
+              <button class="button-value button-value-other">Other</button>
             </div>
           </div>
         </div>
       </section>
       <section class="products">
         <div class="products__wrapper">
-          <div class="products__container">
-
-          </div>
+          <div class="products__container"></div>
         </div>
       </section>
     </main>
-    
 
     <!-- Script -->
     <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
     <script src="shop0404.js"></script>
   </body>
 </html>

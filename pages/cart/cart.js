@@ -21,8 +21,10 @@ const renderHtml = (products) => {
     const html = products
       .map(
         (product) => `    <div class="product-card">
-        <img class="product-card-image" src=${product.image} alt="">
-        <h4 class="product-card-name">${product.name}</h4>
+        <div class="product-conteiner">
+          <img class="product-card-image" src=${product.image} alt="">
+          <h4 class="product-card-name">${product.name}</h4>
+        </div>
         <div class="product-card-actions">
             <span class="product-card-price">${product.price}</span>
           <button class="product-card-button" onClick="deleteProduct(${product.id})">delete</button>

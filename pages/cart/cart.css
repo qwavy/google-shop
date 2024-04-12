@@ -1,0 +1,34 @@
+.wrapper{
+    max-width: 1280px;
+    margin: auto;
+}
+.products{
+    display: flex;
+    flex-direction: column;
+}
+.product-card{
+    display: flex;
+    justify-content: space-between;
+    border-bottom: 1px solid grey;
+}
+.product-card-name{
+    display: flex;
+    align-items: center;
+}
+.product-card:nth-child(1){
+    display: flex;
+    justify-content: space-between;
+    border-top: 1px solid grey;
+    border-bottom: 1px solid grey;
+}
+.product-card-actions{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+}
+.product-card-image{
+    width: 200px;
+}
+.product-conteiner{
+    display: flex;
+}

@@ -105,7 +105,7 @@ const renderHtml = (products) => {
       <h4 class="product-card-name">${product.name}</h4>
       <div class="product-card-actions">
           <span class="product-card-price">${product.price}</span>
-          <button class="product-card-button" onClick="createBuyButton(${product.id})">+</button>
+          <button class="product-card-button" onClick="createBuyButton(${product.id})"><img src="/images/icons/cart.svg"/></button>
       </div>
   </div>`
     )
@@ -117,6 +117,20 @@ const createBuyButton = (id) => {
   axios.post(`https://localhost:7297/cart/1/${id}` , {
   })
   .then((response) => console.log(response))
+  Toastify({
+    text: "Product Added to Cart",
+    duration: 3000,
+    destination: "https://github.com/apvarun/toastify-js",
+    newWindow: true,
+    close: true,
+    gravity: "top", // `top` or `bottom`
+    position: "right", // `left`, `center` or `right`
+    stopOnFocus: true, // Prevents dismissing of toast on hover
+    style: {
+      background: "	#90EE90",
+    },
+    onClick: function(){} // Callback after click
+  }).showToast();
 };
 
 
