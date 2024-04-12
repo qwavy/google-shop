@@ -28,6 +28,11 @@ button{
     display: none;
 }
 
+.block-image{
+    width: 700px;
+    height: 570px;
+    border-radius: 20px;
+}
 
 
 .title{
@@ -219,7 +224,6 @@ button{
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    z-index: 2;
 }
 
 .intellegence__title{
@@ -237,7 +241,75 @@ button{
 
 /* security */
 
+.security{
+    margin-top: 100px;
+}
 
 .security__wrapper{
     display: flex;
+    background-color: #D9E4E8;
+    border-radius: 20px;
+}
+
+.security__info{
+    height: 700px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.security__accordions > .accordion{
+    background-color: #C8D7DD;
+}
+
+/* performance */
+
+.performance{
+    margin-top: 100px;
+}
+
+
+.performance__wrapper{
+    display: flex;
+    justify-content: space-between;
+}
+.block-inner{
+    width: 40%;
+
+}
+.perfromance__info{
+    background-color: #ECF1F3;
+}
+.block-info{
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: start;
+    border-radius: 20px;
+}   
+.block-title{
+    padding: 40px 0;
+    width: 70%;
+}
+
+.block-description{
+    width: 70%;
+}
+
+/* eco */
+
+.eco{
+    margin-top: 100px;
+}
+
+.eco__wrapper{
+    display: flex;
+    justify-content: space-between;
+}
+
+.eco__info{
+    background-color: #F6EFED;
 }
