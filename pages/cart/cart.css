@@ -1,4 +1,4 @@
-@font-face {
+/* @font-face {
     font-family: "Google Sans Bold";
     src: url('/fonts/GoogleSans-Bold.ttf');
 }
@@ -7,7 +7,7 @@
     font-family: "Google Sans Meduim";
     src: url('/fonts/GoogleSans-Medium.ttf');
     font-weight: 400;
-}
+} */
 @font-face {
     font-family: "Google Sans";
     src: url('/fonts/GoogleSans-Regular.ttf');
@@ -17,7 +17,7 @@ body{
 }
 
 .wrapper{
-    max-width: 1280px;
+    max-width: 880px;
     margin: auto;
 }
 .products{
@@ -30,7 +30,7 @@ body{
     border-bottom: 1px solid #E4E7EB;
 }
 .cart-product-info{
-    padding-left: 20px;
+    padding-left: 50px;
     display: flex;
     flex-direction: column;
     justify-content: space-evenly;
@@ -38,6 +38,8 @@ body{
 .cart-product-card-name{
     display: flex;
     align-items: center;
+    max-width: 150px;
+    font-weight: 600;
 }
 .cart-product-card:nth-child(1){
     display: flex;
@@ -57,11 +59,17 @@ body{
     display: flex;
 }
 .cart-product-card-button{
-    width: 0;
-    height: 0;
+    font-size: 16px;
+    color: #1A73E8;
+    padding-right: 5px;
+    cursor: pointer;
 }
 .cart-product-card-price{
-    font-size: 20px;
+    font-size: 16px;
+}
+.cart-product-card-category{
+    color: #374151;
+    margin-bottom: 20px;
 }
 
 .checkout{
@@ -78,13 +86,13 @@ body{
     justify-content: space-between;
 }
 .total{
-    font-family: "Google Sans Meduim";
+    font-family: "Google Sans";
     font-size: 20px;
 }
 
 .total-price{
-    font-size: 25px;
-    font-family: "Google Sans Bold";
+    font-size: 20px;
+    font-family: "Google Sans";
 }
 
 .checkout-button{
@@ -96,6 +104,7 @@ body{
     color: #FFF;
     border: 1px solid #1A73E8;
     font-family: "Google Sans";
+    font-size: 22px;
 }
 .checkout-button:hover{
     cursor: pointer;

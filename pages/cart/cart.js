@@ -18,19 +18,22 @@ const getUserCart = async (id) => {
 }
 
 const renderHtml = (products) => {
+  products.forEach((product) => {
+    product.category[0] = product.category[0].toUpperCase()
+  })
     const html = products
       .map(
         (product) => `    <div class="cart-product-card">
         <div class="cart-product-conteiner">
           <img class="cart-product-card-image" src=${product.image} alt="">
           <div class="cart-product-info">
-          <h4 class="cart-product-card-name">${product.name}</h4>
+          <p class="cart-product-card-name">${product.name}</p>
           <p class="cart-product-card-category">${product.category}</p>
           </div>
         </div>
         <div class="cart-product-card-actions">
-            <span class="cart-product-card-price">$${product.price}</span>
-          <button class="cart-product-card-button" onClick="deleteProduct(${product.id})"><img src="/images/icons/x.svg" width="28" height="28"/></button>
+            <span class="cart-product-card-price">${product.price}$</span>
+          <span class="cart-product-card-button" onClick="deleteProduct(${product.id})" >Remove</span>
 
         </div>
     </div>`
