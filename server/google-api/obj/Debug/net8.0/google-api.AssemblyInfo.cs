@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("google-api")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+7d5dd0c06f6922c03cc768addcd58a9e08138bd8")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+d05cb434526ec018bf75623fb7ebf8b4187659aa")]
 [assembly: System.Reflection.AssemblyProductAttribute("google-api")]
 [assembly: System.Reflection.AssemblyTitleAttribute("google-api")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

@@ -1,5 +1,6 @@
 using System.Net;
 using System.Runtime.CompilerServices;
+using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 
 // var builder = WebApplication.CreateBuilder(args);
@@ -61,23 +62,30 @@ app.MapPost("/register", async (User user, MyDb db) =>
     return Results.Created($"user created {user.Email}", user);
 });
 
-app.MapPost("/login", (User user, MyDb db) =>
+app.MapPost("/login", async (User user, MyDb db) =>
 {
-    foreach (var elem in db.Users)
-    {
-        if (elem.Email == user.Email)
-        {
-            if (elem.Password == user.Password)
-            {
-                return Results.Ok("success login");
-            }
-            else
-            {
-                return Results.NotFound("password not correct");
-            }
+
+    var userInDb = await db.Users.FirstOrDefaultAsync(userDb => userDb.Email == user.Email );
+
+    if(userInDb != null){
+        if(userInDb.Password == user.Password){
+            return Results.Ok(userInDb);
+        }else{
+            return Results.NotFound("password not correct");
         }
-    };
+    }
+
     return Results.NotFound(db.Users);
+});
+
+int userIdVariable = 0;
+
+app.MapPost("/sendUserId" , (UserIdModel userId,MyDb db) => {
+    userIdVariable = userId.userId;
+    return Results.Ok(userIdVariable);
+});
+app.MapGet("/getUserId" , () => {
+    return Results.Ok(userIdVariable);
 });
 
 // products

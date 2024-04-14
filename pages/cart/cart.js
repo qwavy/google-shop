@@ -1,10 +1,21 @@
-const userId = 1
+let userId;
+
+const getUserId = async () => {
+  await axios.get("https://localhost:7297/getUserId")
+    .then((response) => userId = (response.data))
+    .then((response) => console.log(response))
+    console.log(userId)
+
+
+getUserCart(userId)
+
+}
+
+
+getUserId()
+
 
 const productsTemplate = document.querySelector(".products")
-const getData = document.querySelector(".getData")
-
-
-
 
 const getUserCart = async (id) => {
     try{
@@ -53,8 +64,7 @@ const renderHtml = (products) => {
 
 const deleteProduct = (id) => {
     axios.delete(`https://localhost:7297/cart/1/${id}`)
-        .then((response) => console.log(response))
+        .then((response) => renderHtml(response))
 
     window.location.reload(true);
 }
-getUserCart(userId)

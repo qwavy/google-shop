@@ -3,11 +3,11 @@ const button = document.querySelector('.button')
 const form = document.querySelector(".form")
 
 
+
 button.addEventListener("click", (e) => {
     e.preventDefault()
     let email = document.querySelector('.email').value
     let password = document.querySelector('.password').value
-
     axios.post('https://localhost:7297/login', {
         email:email,
         password:password
@@ -19,11 +19,13 @@ button.addEventListener("click", (e) => {
 })
 
 const result = (response) => {
-  console.log(response)
-  if(response.data === "success login"){
+  console.log(response.data)
+  if(response.data !== false){
+    axios.post("https://localhost:7297/sendUserId" , {
+      userId:response.data.id
+    })
+    console.log(response.data.id)
     window.location.href = "http://127.0.0.1:5500/index.html";
-  }else{
-      alert("not found user")
   }
 }
 
