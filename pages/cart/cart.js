@@ -19,7 +19,9 @@ const getUserCart = async (id) => {
 
 const renderHtml = (products) => {
   products.forEach((product) => {
-    product.category[0] = product.category[0].toUpperCase()
+    let upperFirstChar = product.category[0].toUpperCase()
+    let string = product.category.slice(1)
+    product.category = upperFirstChar + string
   })
     const html = products
       .map(
@@ -27,8 +29,14 @@ const renderHtml = (products) => {
         <div class="cart-product-conteiner">
           <img class="cart-product-card-image" src=${product.image} alt="">
           <div class="cart-product-info">
+          <div>
           <p class="cart-product-card-name">${product.name}</p>
           <p class="cart-product-card-category">${product.category}</p>
+          </div>
+          <p class="cart-product-card-stock"><img class="cart-product-card-stock-image" src="/images/icons/correct.svg"/> 
+          <span>
+          In stock
+          </span></p>
           </div>
         </div>
         <div class="cart-product-card-actions">

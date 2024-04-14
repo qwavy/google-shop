@@ -30,10 +30,11 @@ body{
     border-bottom: 1px solid #E4E7EB;
 }
 .cart-product-info{
+    padding-top: 50px;
     padding-left: 50px;
     display: flex;
     flex-direction: column;
-    justify-content: space-evenly;
+    justify-content: start;
 }
 .cart-product-card-name{
     display: flex;
@@ -70,6 +71,22 @@ body{
 .cart-product-card-category{
     color: #374151;
     margin-bottom: 20px;
+}
+
+
+.cart-product-card-stock{
+    display: flex;
+
+}
+
+.cart-product-card-stock span{
+    margin-left: 5px;
+    
+}
+
+.cart-product-card-stock-image{
+    width: 20px;
+    height: 20px;
 }
 
 .checkout{

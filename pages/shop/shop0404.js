@@ -98,13 +98,21 @@ const getAllProducts = async () => {
 };
 
 const renderHtml = (products) => {
+  products.forEach((product) => {
+    let upperFirstChar = product.category[0].toUpperCase()
+    let string = product.category.slice(1)
+    product.category = upperFirstChar + string
+  })
   const html = products
     .map(
       (product) => `    <div class="product-card">
       <img class="product-card-image" src=${product.image} alt="">
+      <div class="product-card-info">
       <h4 class="product-card-name">${product.name}</h4>
+      <p class="product-card-category">${product.category}</p>
+      </div>
       <div class="product-card-actions">
-          <span class="product-card-price">${product.price}</span>
+          <span class="product-card-price">${product.price}$</span>
           <button class="product-card-button" onClick="createBuyButton(${product.id})"><img src="/images/icons/cart.svg"/></button>
       </div>
   </div>`
