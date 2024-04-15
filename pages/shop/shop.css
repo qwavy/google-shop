@@ -63,11 +63,13 @@ body{
 .button-value{
     border-radius: 12px;
     padding: 8px;
-    width: 80px;
-    height: 30px;
+    width: 110px;
+    height: 40px;
     border: 1px solid #1A73E8;
     background-color: transparent;
     color: #1A73E8;
+    gap: 40px;
+
 }
 
 .active{
@@ -79,4 +81,12 @@ body{
 .product-card-category{
     font-style: italic;
     color: #6b7280;
+}
+.filters{
+    height: 200px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.filters__buttons{
 }

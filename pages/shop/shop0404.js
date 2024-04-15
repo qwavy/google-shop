@@ -17,6 +17,20 @@ const accordionName = document.querySelectorAll(".accordion-name")
 const accordionContent = document.querySelectorAll(".accordion-content")
 
 
+let userId;
+
+const getUserId = async () => {
+  await axios.get("https://localhost:7297/getUserId")
+    .then((response) => userId = (response.data))
+    .then((response) => console.log(response))
+    console.log(userId)
+
+
+  
+}
+getUserId()
+
+
 for(let i = 0; i < accordion.length;i++){ 
     accordion[i].addEventListener("click",() => { 
         accordion[i].classList.toggle("active") 
@@ -35,45 +49,53 @@ const changeActiveButton = (button) => {
 
 
 buttonAll.addEventListener("click", () => {
+  const newUrl = new URL(window.location.href);
+  newUrl.searchParams.delete("filterMethod");
+  history.pushState(null, null, newUrl.toString());
 
-  changeActiveButton(buttonAll)
+  categoryButton(buttonAll)
 
-  getAllProducts();
 });
 
 buttonPhone.addEventListener("click", () => {
+  changeUrl("phone")
+  
 
-  changeActiveButton(buttonPhone)
+  categoryButton(buttonPhone)
 
-  getFilteredProducts("phone", createBuyButton);
 });
 
 buttonWatch.addEventListener("click", () => {
   
-  changeActiveButton(buttonWatch)
 
-  getFilteredProducts("watch", createBuyButton);
+  changeUrl("watch")
+  
+
+  categoryButton(buttonWatch)
+
 });
 
 buttonTablet.addEventListener("click", () => {
   
-  changeActiveButton(buttonTablet)
+  changeUrl("tablet")
+    
 
-  getFilteredProducts("tablet", createBuyButton);
+  categoryButton(buttonTablet)
 });
 
 buttonEarphone.addEventListener("click", () => {
   
-  changeActiveButton(buttonEarphone)
+  changeUrl("earphone")
+    
 
-  getFilteredProducts("earphone", createBuyButton);
+  categoryButton(buttonEarphone)
 });
 
 buttonOther.addEventListener("click", () => {
   
-  changeActiveButton(buttonOther)
+  changeUrl("other")
 
-  getFilteredProducts("other", createBuyButton);
+  categoryButton(buttonOther)
 });
 
 const getFilteredProducts = async (filterMethod, createBuyButton) => {
@@ -88,6 +110,7 @@ const getFilteredProducts = async (filterMethod, createBuyButton) => {
 };
 
 const getAllProducts = async () => {
+  
   try {
     const products = await axios.get("https://localhost:7297/products");
     console.log(products);
@@ -95,6 +118,9 @@ const getAllProducts = async () => {
   } catch (e) {
     console.log(e);
   }
+
+
+
 };
 
 const renderHtml = (products) => {
@@ -122,7 +148,7 @@ const renderHtml = (products) => {
 };
 
 const createBuyButton = (id) => {
-  axios.post(`https://localhost:7297/cart/1/${id}` , {
+  axios.post(`https://localhost:7297/cart/${userId}/${id}` , {
   })
   .then((response) => console.log(response))
   Toastify({
@@ -141,7 +167,32 @@ const createBuyButton = (id) => {
   }).showToast();
 };
 
+const changeUrl = (filterMethod) => {
+  const newUrl = new URL(window.location.href);
+  newUrl.searchParams.set("filterMethod", filterMethod);
+  history.pushState(null, null, newUrl.toString());
+
+}
+
+const categoryButton = (button) => {
+  const query = new URLSearchParams(location.search);
+  const filterMethod = query.get( "filterMethod" )
+  if(!filterMethod){
+    console.log(filterMethod)
+    getAllProducts()
+    changeActiveButton(buttonAll)
+  }else{
+    getFilteredProducts(filterMethod, createBuyButton);
 
 
 
-getAllProducts()
+    changeActiveButton(document.querySelector(`.button-value-${filterMethod}`))
+  }
+
+
+
+
+}
+
+
+categoryButton()

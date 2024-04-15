@@ -1,3 +1,13 @@
+@font-face {
+    font-family: "Google Sans";
+    src: url('/fonts/GoogleSans-Regular.ttf');
+}
+a{
+    text-decoration: none;
+    color: #FFF;
+}
+
+
 .header{
     max-width: 1280px;
     margin: auto;
@@ -16,6 +26,7 @@
     display: flex;
     justify-content: space-evenly;
     list-style: none;
+    align-items: center;
 }
 
 .header__item{
@@ -34,12 +45,15 @@
 
 .header-action{
     
-    width: 15%;
+    width: 100px;
 }
+
+
 
 .header-action__inner{
     display: flex;
     justify-content: space-around;
+    align-items: center;
 }
 
 .header-action__image{
@@ -190,6 +204,7 @@ display: none;
 .product-card-image:hover{
     transform: scale(1.1);
 }
+
 
 
 @media screen and (max-width: 576px) {

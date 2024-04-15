@@ -12,6 +12,7 @@ button.addEventListener("click", (e) => {
         password:password
     })
     .then((response) => console.log(response))
+    .then(window.location.href = "http://127.0.0.1:5500//pages/auth/auth.html")
       .catch(function (error) {
         console.log(error);
       });

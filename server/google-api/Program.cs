@@ -75,7 +75,7 @@ app.MapPost("/login", async (User user, MyDb db) =>
         }
     }
 
-    return Results.NotFound(db.Users);
+    return Results.NotFound("user not found");
 });
 
 int userIdVariable = 0;
@@ -147,6 +147,8 @@ app.MapDelete("/DeleteProduct/{productId}" , async (int productId , MyDb db) => 
     return Results.NoContent();
 });
 
+
+
 // cart
 app.MapGet("/cart/{userId}/get", async (int userId, MyDb db) =>
 {
@@ -162,6 +164,20 @@ app.MapGet("/cart/{userId}/get", async (int userId, MyDb db) =>
     }
 
     return Results.Ok(objectsList);
+});
+
+app.MapGet("/cart/${userId}/total" , async (int userId,MyDb db) => {
+    double total = 0;
+    foreach(var elem in db.CartProducts)
+    {
+        if(elem.UserId == userId)
+        {
+            total += elem.Price;
+        }
+    }
+    return Results.Ok(total);
+
+    
 });
 
 app.MapPost("/cart/{userId}/{id}", async (int userId, int id, MyDb db) =>
@@ -196,5 +212,26 @@ app.MapDelete("/cart/{userId}/{productId}", async (int userId, int productId, My
     await db.SaveChangesAsync();
     return Results.Ok($"deleted {productId} for {userId}");
 });
+
+app.MapGet("/cart/{userId}/testEmptyCart" , async ( int userId,MyDb db) => {
+        List<CartProduct> objectsList = new List<CartProduct>();
+
+
+    foreach (var elem in db.CartProducts)
+    {
+        if (elem.UserId == userId)
+        {
+            objectsList.Add(elem);
+        }
+    }
+
+    if(objectsList.Count > 0){
+        return Results.Ok("cart doesnt Empty");
+    }else{
+        return Results.Ok("cart Empty");
+    }
+
+});
+
 
 app.Run();

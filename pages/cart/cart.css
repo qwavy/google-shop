@@ -1,19 +1,20 @@
-/* @font-face {
-    font-family: "Google Sans Bold";
-    src: url('/fonts/GoogleSans-Bold.ttf');
-}
 
-@font-face {
-    font-family: "Google Sans Meduim";
-    src: url('/fonts/GoogleSans-Medium.ttf');
-    font-weight: 400;
-} */
 @font-face {
     font-family: "Google Sans";
     src: url('/fonts/GoogleSans-Regular.ttf');
 }
 body{
     font-family: 'Google Sans';
+}
+
+.hidden{
+    display: none;
+}
+.wrapper-empty{
+
+        max-width: 880px;
+        margin: auto;
+    
 }
 
 .wrapper{

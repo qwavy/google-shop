@@ -8,18 +8,32 @@ const getUserId = async () => {
 
 
 getUserCart(userId)
+testIsCartEmpty()
 
 }
 
-
 getUserId()
 
+
+const testIsCartEmpty = async () => {
+  await axios.get(`https://localhost:7297/cart/${userId}/testEmptyCart`)
+    .then((response) => doTestIsCartEmpty(response.data))
+    
+}
+function doTestIsCartEmpty (response)  {
+  console.log(response)
+  if(response == "cart Empty"){
+    document.querySelector(".wrapper").classList.add("hidden")
+    document.querySelector(".wrapper-empty").classList.remove("hidden")
+  }
+}
 
 const productsTemplate = document.querySelector(".products")
 
 const getUserCart = async (id) => {
     try{
         const cartProducts = await axios.get(`https://localhost:7297/cart/${id}/get`)
+        
         console.log(cartProducts)
         renderHtml(cartProducts.data)
     }
