@@ -166,7 +166,7 @@ app.MapGet("/cart/{userId}/get", async (int userId, MyDb db) =>
     return Results.Ok(objectsList);
 });
 
-app.MapGet("/cart/${userId}/total" , async (int userId,MyDb db) => {
+app.MapGet("/cart/{userId}/total" , async (int userId,MyDb db) => {
     double total = 0;
     foreach(var elem in db.CartProducts)
     {

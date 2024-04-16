@@ -48,28 +48,35 @@ body{
 }
 
 .products__container{
+    width: 85%;
+    margin: auto;
     display: grid;
     grid-template-columns: repeat(3,1fr);
 }
 
 
 .product-card{
-    width: 500px;
+    width: 400px;
 }
 .product-image{
     width: 100px;
 }
-
+.product-card-image{
+    height: 350px;
+    width: 350px;
+}
 .button-value{
     border-radius: 12px;
     padding: 8px;
-    width: 110px;
-    height: 40px;
+    width: 130px;
+    height: 60px;
     border: 1px solid #1A73E8;
     background-color: transparent;
     color: #1A73E8;
     gap: 40px;
-
+font-family: 'Google Sans', Arial, Helvetica, sans-serif;
+    font-size: 18px;
+    margin-right: 20px;
 }
 
 .active{
@@ -89,4 +96,12 @@ body{
     align-items: center;
 }
 .filters__buttons{
+}
+
+.product-card-button{
+    margin-right: 40px;
+}
+
+.product-card-price{
+    font-size: 25px;
 }

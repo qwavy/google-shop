@@ -12,7 +12,7 @@ form.addEventListener(("submit"),  (e) => {
         position: "right", // `left`, `center` or `right`
         stopOnFocus: true, // Prevents dismissing of toast on hover
         style: {
-          background: "	#90EE90",
+          background: "#90EE90",
         },
         onClick: function(){} // Callback after click
       }).showToast();

@@ -1,11 +1,15 @@
-/* @import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap'); */
-@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap');
 
+@font-face {
+    font-family: "Google Sans";
+    src: url('/fonts/GoogleSans-Regular.ttf');
+
+}
 
 body{
     margin: auto;
-    max-width: 1280px;
-    font-family: 'Open Sans', Arial, Helvetica, sans-serif;
+    /* max-width: 1280px; */
+    font-family: 'Google Sans', Arial, Helvetica, sans-serif;
+
 }
 
 *{
@@ -13,6 +17,11 @@ body{
     padding: 0;
     box-sizing: border-box;
 
+}
+
+section{
+    margin: 0 auto;
+    max-width: 1280px;
 }
 
 .wrapper{
@@ -70,7 +79,7 @@ body{
 } */
 
 .hero{
-    width: 1300px !important;
+    width: 100% !important;
     display: flex;
     align-items: center;
     height: 600px;
@@ -212,10 +221,11 @@ body{
 
 /* health */
 
-.health{
-    margin: 100px 0;
-}
 
+.health__wrapper{
+    margin: 100px 0;
+
+}
 
 
 

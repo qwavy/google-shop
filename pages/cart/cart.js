@@ -9,7 +9,7 @@ const getUserId = async () => {
 
 getUserCart(userId)
 testIsCartEmpty()
-
+getTotalPrice(userId)
 }
 
 getUserId()
@@ -77,8 +77,31 @@ const renderHtml = (products) => {
 
 
 const deleteProduct = (id) => {
-    axios.delete(`https://localhost:7297/cart/1/${id}`)
+    axios.delete(`https://localhost:7297/cart/${userId}/${id}`)
         .then((response) => renderHtml(response))
 
-    window.location.reload(true);
+        window.location.reload(true);
+
+        Toastify({
+          text: "The product was deleted",
+          duration: 3000,
+          destination: "https://github.com/apvarun/toastify-js",
+          newWindow: true,
+          close: true,
+          gravity: "top", // `top` or `bottom`
+          position: "right", // `left`, `center` or `right`
+          stopOnFocus: true, // Prevents dismissing of toast on hover
+          style: {
+            background: "	#90EE90",
+          },
+          onClick: function(){} // Callback after click
+        }).showToast();
+
+}
+
+
+
+const getTotalPrice = (id) => {
+  axios.get(`https://localhost:7297/cart/${id}/total`)
+      .then((response) => document.querySelector(".total-price").textContent = response.data)
 }
